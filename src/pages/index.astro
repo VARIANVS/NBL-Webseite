@@ -1,39 +1,46 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 ---
 
 <Layout title="NVMERVS BRITTONVM">
   <main>
     <h1><span class="text-gradient">NVMERVS BRITTONVM</span></h1>
-    <p class="instructions">
-      To get started, open the directory <code>src/pages</code> in your project.<br
-      />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message
-      above.
+    <p class="description">
+      Die Mitglieder der Römergruppe Numerus Brittonum, allesamt Menschen mit
+      einem Drang nach einem außergewöhnlichen Hobby mit Tiefgang, heißen Sie
+      hier willkommen! Unsere Gruppe, bestehend aus Frauen und Männern allen
+      Alters und Berufsgruppen, wurde im Jahr 2005 gegründet, um die antike
+      Grenzlinie und moderne Welterbestätte „obergermanisch-raetischer Limes“
+      als authentischen Geschichtsort für die Gegenwart zu vermitteln. Unsere
+      Mission: Die „Faszination Roms“ und die römische Vergangenheit in der
+      eigenen Heimat im 21. Jahrhundert zeitgemäß und realitätsnah zu
+      vermitteln.
+      <br />
+      <strong>
+        Im Welzheimer Ostkastell daheim, am ganzen Limes entlang zuhause!
+      </strong>
+      <br />
+       Als Abbild einer Grenztruppe samt ihres zivilen Umfeld eines
+      Kastellstandortes macht der Numerus Brittonum das Lebens am Rande des
+      Imperiums wieder lebendig. Damit hat 1800 Jahre nach Aufgabe der
+      Welzheimer Ostkastells die Anlage und der gesamte Limes eine neue
+      Besatzung gefunden. Mit seiner ehrenamtlichen und gemeinnützigen
+      Tätigkeiten als eine Abteilung des Historischen Vereins Welzheim findet
+      man die Gruppe bei Römerfesten, auf eigenen Veranstaltungen und bei der
+      Realisierung ihrer eigenen Projekten. Dabei ist die Truppe, die Einzige,
+      die sich dem Einheitentypus einer Numeri-Einheit widmet. Nebenbei sind wir
+      in der Berufung auf die ehemalige Garnison des Ortes der “älteste” Verein
+      des Landes Baden-Württemberg! Interesse geweckt? Dann viel Vergnügen bei
+      der Lektüre unseres digitalen Auftritts, der hoffentlich dazu anregt, uns
+      auch mal live im römischen Marschlager, irgendwo an der Limeslinie, zu
+      erleben.
+      <br />
+      <strong> Der Limes lebt – Werde ein Teil davon!</strong>
+      <br />
+       Viel Vergnügen beim Weiterlesen wünscht Ihnen der NVMERVS BRITTONVM.
     </p>
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://docs.astro.build/"
-        title="Documentation"
-        body="Learn how Astro works and explore the official API docs."
-      />
-      <Card
-        href="https://astro.build/integrations/"
-        title="Integrations"
-        body="Supercharge your project with new frameworks and libraries."
-      />
-      <Card
-        href="https://astro.build/themes/"
-        title="Themes"
-        body="Explore a galaxy of community-built starter themes."
-      />
-      <Card
-        href="https://astro.build/chat/"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-    </ul>
+    <div class="group-image"></div>
+    <img src="/nbl-gruppenbild_1.jpg" alt="Das Gruppenbild" />
   </main>
 </Layout>
 
@@ -47,15 +54,6 @@ import Card from "../components/Card.astro";
     font-size: 20px;
     line-height: 1.6;
   }
-  .astro-a {
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translatex(-50%);
-    width: 220px;
-    height: auto;
-    z-index: -1;
-  }
   h1 {
     font-size: 4rem;
     font-weight: 700;
@@ -63,33 +61,34 @@ import Card from "../components/Card.astro";
     text-align: center;
     margin-bottom: 1em;
   }
+
   .text-gradient {
-    background-image: var(--accent-gradient);
+    background-image: var(--primary-color-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 400%;
     background-position: 0%;
   }
-  .instructions {
+  .description {
     margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
+    border: 1px solid rgba(var(--color-light), 25%);
     background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
+      rgba(var(--color-dark), 66%),
+      rgba(var(--color-dark), 33%)
     );
     padding: 1.5rem;
     border-radius: 8px;
   }
-  .instructions code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
+
+  .description strong {
+    color: var(--color-light);
   }
-  .instructions strong {
-    color: rgb(var(--accent-light));
+
+  .group_image {
+    position: absolute; /* Position des Bildcontainers absolut setzen */
+    left: 0; /* Links ausrichten */
+    width: 100vw; /* Volle Bildschirmbreite */
+    overflow: hidden; /* Überstehenden Bildinhalt ausblenden */
   }
   .link-card-grid {
     display: grid;

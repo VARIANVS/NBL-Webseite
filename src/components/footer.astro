@@ -1,0 +1,33 @@
+---
+let currentTime = new Date();
+let year = currentTime.getFullYear();
+---
+
+<footer>
+  <p>&copy; {year} by NVMERVS BRITTONVM. All rights reserved.</p>
+  <ul>
+    <li><a href="/impressum" class="link-grey">[Impressum]</a></li>
+    <li><a href="/datenschutz" class="link-grey">[Datenschutz]</a></li>
+  </ul>
+</footer>
+
+<style>
+  footer {
+    font-size: calc(0.75rem + var(--font-scale));
+    margin-bottom: 32px;
+    color: beige;
+  }
+
+  footer > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .link-grey {
+    color: beige;
+    text-decoration: none;
+  }
+</style>
