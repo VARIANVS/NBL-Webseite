@@ -1,6 +1,6 @@
 :root {
-    --color-primary: rgb(138, 54, 54);
-    --color-secondary: rgba(107, 154, 199, 1);
+    --color-primary: rgb(124, 12, 24);
+    --color-secondary: rgb(213, 79, 80);
     --color-accent: rgba(119, 112, 150, 1);
     --color-warning: rgba(202, 121, 45, 1);
     --color-danger: rgba(180, 25, 14, 1);
@@ -13,6 +13,11 @@
             var(--color-primary),
             var(--color-light) 30%,
             white 60%);
+
+
+
+    --text-font-size: 1svw;
+    --text-line-height: 1.3svw;
 }
 
 html {

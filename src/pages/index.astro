@@ -4,48 +4,62 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="NVMERVS BRITTONVM">
   <main>
-    <h1><span class="text-gradient">NVMERVS BRITTONVM</span></h1>
-    <p class="description">
-      Die Mitglieder der Römergruppe Numerus Brittonum, allesamt Menschen mit
-      einem Drang nach einem außergewöhnlichen Hobby mit Tiefgang, heißen Sie
-      hier willkommen! Unsere Gruppe, bestehend aus Frauen und Männern allen
-      Alters und Berufsgruppen, wurde im Jahr 2005 gegründet, um die antike
-      Grenzlinie und moderne Welterbestätte „obergermanisch-raetischer Limes“
-      als authentischen Geschichtsort für die Gegenwart zu vermitteln. Unsere
-      Mission: Die „Faszination Roms“ und die römische Vergangenheit in der
-      eigenen Heimat im 21. Jahrhundert zeitgemäß und realitätsnah zu
-      vermitteln.
-      <br />
-      <strong>
-        Im Welzheimer Ostkastell daheim, am ganzen Limes entlang zuhause!
-      </strong>
-      <br />
-       Als Abbild einer Grenztruppe samt ihres zivilen Umfeld eines
-      Kastellstandortes macht der Numerus Brittonum das Lebens am Rande des
-      Imperiums wieder lebendig. Damit hat 1800 Jahre nach Aufgabe der
-      Welzheimer Ostkastells die Anlage und der gesamte Limes eine neue
-      Besatzung gefunden. Mit seiner ehrenamtlichen und gemeinnützigen
-      Tätigkeiten als eine Abteilung des Historischen Vereins Welzheim findet
-      man die Gruppe bei Römerfesten, auf eigenen Veranstaltungen und bei der
-      Realisierung ihrer eigenen Projekten. Dabei ist die Truppe, die Einzige,
-      die sich dem Einheitentypus einer Numeri-Einheit widmet. Nebenbei sind wir
-      in der Berufung auf die ehemalige Garnison des Ortes der “älteste” Verein
-      des Landes Baden-Württemberg! Interesse geweckt? Dann viel Vergnügen bei
-      der Lektüre unseres digitalen Auftritts, der hoffentlich dazu anregt, uns
-      auch mal live im römischen Marschlager, irgendwo an der Limeslinie, zu
-      erleben.
-      <br />
-      <strong> Der Limes lebt – Werde ein Teil davon!</strong>
-      <br />
-       Viel Vergnügen beim Weiterlesen wünscht Ihnen der NVMERVS BRITTONVM.
-    </p>
-    <div class="group-image"></div>
-    <img src="/nbl-gruppenbild_1.jpg" alt="Das Gruppenbild" />
+    <a href="index.html">
+      <img class="logo" src="/public/nbl-logo.png" alt="Das offizielle Logo" />
+    </a>
+    <div class="group_image">
+      <img src="/public/nbl-gruppenbild_1_cut.jpg" alt="Das Gruppenbild" />
+      <p><strong>Der Limes lebt – Werde ein Teil davon!</strong></p>
+    </div>
+    <div class="container">
+      <p class="description">
+        Die Mitglieder der Römergruppe Numerus Brittonum, allesamt Menschen mit
+        einem Drang nach einem außergewöhnlichen Hobby mit Tiefgang, heißen Sie
+        hier willkommen! Unsere Gruppe, bestehend aus Frauen und Männern allen
+        Alters und Berufsgruppen, wurde im Jahr 2005 gegründet, um die antike
+        Grenzlinie und moderne Welterbestätte „obergermanisch-raetischer Limes“
+        als authentischen Geschichtsort für die Gegenwart zu vermitteln. Unsere
+        Mission: Die „Faszination Roms“ und die römische Vergangenheit in der
+        eigenen Heimat im 21. Jahrhundert zeitgemäß und realitätsnah zu
+        vermitteln.
+        <br />
+        <strong>
+          Im Welzheimer Ostkastell daheim, am ganzen Limes entlang zuhause!
+        </strong>
+        <br />
+         Als Abbild einer Grenztruppe samt ihres zivilen Umfeld eines
+        Kastellstandortes macht der Numerus Brittonum das Lebens am Rande des
+        Imperiums wieder lebendig. Damit hat 1800 Jahre nach Aufgabe der
+        Welzheimer Ostkastells die Anlage und der gesamte Limes eine neue
+        Besatzung gefunden. Mit seiner ehrenamtlichen und gemeinnützigen
+        Tätigkeiten als eine Abteilung des Historischen Vereins Welzheim findet
+        man die Gruppe bei Römerfesten, auf eigenen Veranstaltungen und bei der
+        Realisierung ihrer eigenen Projekten. Dabei ist die Truppe, die Einzige,
+        die sich dem Einheitentypus einer Numeri-Einheit widmet. Nebenbei sind
+        wir in der Berufung auf die ehemalige Garnison des Ortes der “älteste”
+        Verein des Landes Baden-Württemberg! Interesse geweckt? Dann viel
+        Vergnügen bei der Lektüre unseres digitalen Auftritts, der hoffentlich
+        dazu anregt, uns auch mal live im römischen Marschlager, irgendwo an der
+        Limeslinie, zu erleben.
+        <br />
+        <strong> Der Limes lebt – Werde ein Teil davon!</strong>
+        <br />
+         Viel Vergnügen beim Weiterlesen wünscht Ihnen der NVMERVS BRITTONVM.
+      </p>
+    </div>
   </main>
 </Layout>
 
 <style>
-  main {
+  .logo {
+    display: block;
+    position: absolute;
+    top: 1.5em;
+    left: 10svw;
+    z-index: 2;
+  }
+  .container {
+    display: flex;
     margin: auto;
     padding: 1rem;
     width: 800px;
@@ -53,16 +67,10 @@ import Layout from "../layouts/Layout.astro";
     color: white;
     font-size: 20px;
     line-height: 1.6;
-  }
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
+    z-index: 0;
   }
 
-  .text-gradient {
+  .text_gradient {
     background-image: var(--primary-color-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -72,28 +80,33 @@ import Layout from "../layouts/Layout.astro";
   .description {
     margin-bottom: 2rem;
     border: 1px solid rgba(var(--color-light), 25%);
-    background: linear-gradient(
-      rgba(var(--color-dark), 66%),
-      rgba(var(--color-dark), 33%)
-    );
     padding: 1.5rem;
     border-radius: 8px;
   }
 
   .description strong {
     color: var(--color-light);
+    line-height: 3;
   }
 
   .group_image {
-    position: absolute; /* Position des Bildcontainers absolut setzen */
-    left: 0; /* Links ausrichten */
-    width: 100vw; /* Volle Bildschirmbreite */
-    overflow: hidden; /* Überstehenden Bildinhalt ausblenden */
+    max-width: 100svw;
+    overflow: hidden;
+    position: relative; /* Position des Bildcontainers relativ setzen */ /* Volle Bildschirmbreite */
   }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 0;
+  img {
+    max-width: 100%;
+  }
+
+  .group_image p {
+    font-size: 1.7rem;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+    position: absolute; /* Position des Absatzes absolut setzen */
+    top: 8%; /* Anpassen der vertikalen Position des Absatzes */
+    left: 25%; /* Horizontal in der Mitte positionieren */
+    transform: translate(-50%, -50%); /* Zentrieren */
+    text-shadow: 2px 2px 10px black;
   }
 </style>
