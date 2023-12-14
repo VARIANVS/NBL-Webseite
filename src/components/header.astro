@@ -12,12 +12,16 @@
       <div></div>
     </label>
     <a href="index.html" class="logo_link">
-      <img class="logo" src="/public/nbl-logo.png" alt="Das offizielle Logo" />
+      <img
+        class="logo"
+        src="/public/nbl_logo_black.png"
+        alt="Das offizielle Logo"
+      />
     </a>
     <ul id="menu">
       <a href="index.html"><li>Home</li></a>
-      <a href="events.html"><li>Events</li></a>
-      <a href="about.html"><li>Über Uns</li></a>
+      <a href="events.html"><li>Veranstalungen</li></a>
+      <a href="about.html"><li>Darstellung</li></a>
     </ul>
   </div>
 </nav>
@@ -25,7 +29,7 @@
 <style>
   .logo {
     position: fixed;
-    z-index: 5;
+    z-index: 1;
     opacity: 0;
     transition:
       opacity 0.8s ease,
@@ -68,8 +72,8 @@
     position: fixed;
     width: 35px;
     height: 30px;
-    top: 35px;
-    right: 12px;
+    top: 37px;
+    right: 32px;
     cursor: pointer;
     opacity: 0;
     z-index: 3;
@@ -102,9 +106,9 @@
     -webkit-transform-origin: 4px 0px;
     -ms-transform-origin: 4px 0px;
     transform-origin: 4px 0px;
-    -webkit-transition: all 0.4s ease;
-    -o-transition: all 0.4s ease;
-    transition: all 0.4s ease;
+    -webkit-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    transition: all 0.8s ease;
     right: 20px;
     top: 3px;
   }
@@ -134,6 +138,7 @@
     display: flex;
     position: fixed;
     width: 100svw;
+    max-height: 40px;
     margin: -80px 0 0 0px;
     padding: 50px;
     padding-top: 110px;
@@ -142,12 +147,12 @@
     top: -18%;
     right: 0;
     padding-right: 100px;
-    -webkit-transition: top 0.4s ease;
-    -o-transition: top 0.4s ease;
-    transition: top 0.4s ease;
+    -webkit-transition: top 0.8s ease;
+    -o-transition: top 0.8s ease;
+    transition: top 0.8s ease;
     flex-direction: row;
     justify-content: right;
-    gap: 100px;
+    gap: 4svw;
   }
 
   #menu li {
@@ -156,10 +161,14 @@
     font-weight: bold;
   }
 
-  /*
- * Slide the menu in from left when the input is checked
- */
   #menuToggle input:checked ~ ul {
     top: 0;
+  }
+
+  @media (max-width: 768px) {
+    .logo {
+      max-width: 50%; /* Set the maximum width to 100% */
+      height: auto; /* Allow the height to adjust automatically */
+    }
   }
 </style>

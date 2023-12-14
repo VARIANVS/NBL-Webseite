@@ -5,7 +5,7 @@
     --color-warning: rgba(202, 121, 45, 1);
     --color-danger: rgba(180, 25, 14, 1);
     --color-success: rgba(77, 137, 101, 1);
-    --color-dark: rgb(101, 10, 10);
+    --color-dark: rgb(78, 8, 8);
     --color-light: rgb(204, 126, 126);
     --color-info: rgba(25, 28, 38, 1);
 
@@ -14,28 +14,16 @@
             var(--color-light) 30%,
             white 60%);
 
-
-
-    --text-font-size: 1svw;
+    --text-font-size: 1.1svw;
     --text-line-height: 1.3svw;
+    --text-color-standard: rgb(255, 255, 255);
+
 }
 
 html {
     font-family: system-ui, sans-serif;
     background: #13151a;
     background-size: 224px;
-}
-
-code {
-    font-family:
-        Menlo,
-        Monaco,
-        Lucida Console,
-        Liberation Mono,
-        DejaVu Sans Mono,
-        Bitstream Vera Sans Mono,
-        Courier New,
-        monospace;
 }
 
 .hidden {

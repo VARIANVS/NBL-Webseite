@@ -1,0 +1,121 @@
+---
+interface Props {
+  headline1: string;
+  headline2: string;
+  headline3: string;
+  headline4: string;
+  headline5: string;
+  headline6: string;
+  text1: string;
+  text2: string;
+  text3: string;
+  text4: string;
+  text5: string;
+  text6: string;
+  url1: string;
+  url2: string;
+  url3: string;
+  url4: string;
+  url5: string;
+  url6: string;
+}
+
+const {
+  headline1 = "Deine Karriere",
+  headline2 = "Das bieten wir",
+  headline3 = "Veranstaltungen",
+  headline4 = "Darstellung",
+  headline5 = "Die Mitglieder",
+  headline6 = "Kontaktiere uns",
+  text1 = "Rom braucht dich!\nEgal ob als Zivil oder Militär.\nDu bist herzlich eingeladen.",
+  text2 = "euch!",
+  text3 = "auf welchen ihr und in diesem Jahr antreffen könnt.",
+  text4 = "Was wir machen und tun.",
+  text5 = "stellen sich vor.",
+  text6 = "für egal welche Anfrage.",
+  url1 = "career.html",
+  url2 = "offers.html",
+  url3 = "events.html",
+  url4 = "about.html",
+  url5 = "members.html",
+  url6 = "contact.html",
+} = Astro.props;
+---
+
+<div class="grid">
+  <div class="container">
+    <h2>{headline1}</h2>
+    <p>{text1}</p>
+    <a href={url1}>
+      <span class="link"></span>
+    </a>
+  </div>
+  <div class="container">
+    <h2>{headline2}</h2>
+    <p>{text2}</p>
+    <a href={url2}>
+      <span class="link"></span>
+    </a>
+  </div>
+  <div class="container">
+    <h2>{headline3}</h2>
+    <p>{text3}</p>
+    <a href={url3}>
+      <span class="link"></span>
+    </a>
+  </div>
+  <div class="container">
+    <h2>{headline4}</h2>
+    <p>{text4}</p>
+    <a href={url4}>
+      <span class="link"></span>
+    </a>
+  </div>
+  <div class="container">
+    <h2>{headline5}</h2>
+    <p>{text5}</p>
+    <a href={url5}>
+      <span class="link"></span>
+    </a>
+  </div>
+  <div class="container">
+    <h2>{headline6}</h2>
+    <p>{text6}</p>
+    <a href={url6}>
+      <span class="link"></span>
+    </a>
+  </div>
+</div>
+
+<style>
+  .grid {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .container {
+    background-color: var(--color-dark);
+    color: var(--text-color-standard);
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr; /* Change the grid to a single column */
+    }
+  }
+</style>
