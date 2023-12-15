@@ -42,52 +42,65 @@ const {
 } = Astro.props;
 ---
 
-<div class="grid">
-  <div class="container">
-    <h2>{headline1}</h2>
-    <p>{text1}</p>
-    <a href={url1}>
-      <span class="link"></span>
-    </a>
-  </div>
-  <div class="container">
-    <h2>{headline2}</h2>
-    <p>{text2}</p>
-    <a href={url2}>
-      <span class="link"></span>
-    </a>
-  </div>
-  <div class="container">
-    <h2>{headline3}</h2>
-    <p>{text3}</p>
-    <a href={url3}>
-      <span class="link"></span>
-    </a>
-  </div>
-  <div class="container">
-    <h2>{headline4}</h2>
-    <p>{text4}</p>
-    <a href={url4}>
-      <span class="link"></span>
-    </a>
-  </div>
-  <div class="container">
-    <h2>{headline5}</h2>
-    <p>{text5}</p>
-    <a href={url5}>
-      <span class="link"></span>
-    </a>
-  </div>
-  <div class="container">
-    <h2>{headline6}</h2>
-    <p>{text6}</p>
-    <a href={url6}>
-      <span class="link"></span>
-    </a>
+<div class="grid_box">
+  <h1>Unser Aufgebot</h1>
+  <div class="grid">
+    <div class="container">
+      <h2>{headline1}</h2>
+      <p>{text1}</p>
+      <a href={url1}>
+        <span class="link"></span>
+      </a>
+    </div>
+    <div class="container">
+      <h2>{headline2}</h2>
+      <p>{text2}</p>
+      <a href={url2}>
+        <span class="link"></span>
+      </a>
+    </div>
+    <div class="container">
+      <h2>{headline3}</h2>
+      <p>{text3}</p>
+      <a href={url3}>
+        <span class="link"></span>
+      </a>
+    </div>
+    <div class="container">
+      <h2>{headline4}</h2>
+      <p>{text4}</p>
+      <a href={url4}>
+        <span class="link"></span>
+      </a>
+    </div>
+    <div class="container">
+      <h2>{headline5}</h2>
+      <p>{text5}</p>
+      <a href={url5}>
+        <span class="link"></span>
+      </a>
+    </div>
+    <div class="container">
+      <h2>{headline6}</h2>
+      <p>{text6}</p>
+      <a href={url6}>
+        <span class="link"></span>
+      </a>
+    </div>
   </div>
 </div>
-
 <style>
+  .grid_box {
+    background: var(--color-accent);
+    padding: 0.1em 5em 5em;
+  }
+
+  h1 {
+    color: var(--color-primary);
+    text-align: center;
+    padding-bottom: 0.3em;
+  }
+
   .grid {
     text-align: center;
     display: grid;
@@ -115,7 +128,7 @@ const {
 
   @media (max-width: 768px) {
     .grid {
-      grid-template-columns: 1fr; /* Change the grid to a single column */
+      grid-template-columns: 1fr;
     }
   }
 </style>
