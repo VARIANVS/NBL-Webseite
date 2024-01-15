@@ -5,30 +5,60 @@
 
   @media (min-width: 250px) {
 
-      .bar {
+      .headline {
+          text-align: center;
+          max-width: 100%;
+          margin: auto;
+          font-size: calc(var(--text-font-size) + 0svw);
+          padding: 1svw;
+          text-shadow: 2px 4px 2px var(--text-shadow);
+      }
+
+      #headline_1_left {
+          margin: auto 15svw auto 0;
+          color: var(--color-secondary);
+      }
+
+      #headline_1_right {
+          margin: auto 0 auto 13svw;
+          color: var(--color-light)
+      }
+
+      .container_1 {
+          text-align: center;
           position: relative;
           background-color: var(--color-dark);
-          top: -11.5svh;
-          height: auto;
-          padding: 1rem;
-      }
-
-      .bar_paragraph {
-          display: flex;
-          margin: auto;
-          padding: 1rem;
-          width: 800px;
-          max-width: calc(100% - 2rem);
           font-size: var(--text-font-size);
           color: var(--text-color-standard);
+          max-width: 100%;
+          box-shadow: 0px 0px 6px 0px var(--box-shadow);
       }
 
-      .bar_headline {
+      .container_1_paragraph {
+          text-align: left;
+          display: flex;
           margin: auto;
+          padding: 2svw;
           max-width: 800px;
+      }
+
+      .headline_2 {
+          text-align: center;
+          max-width: 100%;
+          margin: auto;
+          font-size: calc(var(--text-font-size) + 0svw);
+          padding: 2svw;
+          text-shadow: 2px 4px 2px var(--text-shadow);
+      }
+
+      #headline_2_left {
+          margin: auto 0svw auto 0;
           color: var(--color-light);
-          font-size: var(--text-font-size);
-          line-height: 3;
+      }
+
+      #headline_2_right {
+          margin: auto 0 auto 0svw;
+          color: var(--color-secondary);
       }
 
       .logo {
@@ -39,30 +69,31 @@
           z-index: 2;
           max-width: 50%;
           height: auto;
+          animation: fly 1s forwards;
       }
 
-      .description {
-          margin-bottom: 2rem;
-          border: 1px solid rgba(var(--color-light), 25%);
-          padding: 1.5rem;
-          border-radius: 8px;
+      #logo_page {
+          position: relative;
+          display: block;
+          margin: auto;
+          padding-top: 2.5svw;
       }
 
-      .description strong {
-          color: var(--color-light);
-          line-height: 3;
-      }
+      /* Hero Image */
 
       .group_image {
           max-width: 100svw;
           overflow: hidden;
           position: relative;
+          margin-bottom: -0.25em;
       }
 
-      img {
+      .group_image img {
           max-width: 100%;
+          box-shadow: 0px 0px 6px 0px var(--box-shadow);
       }
 
+      /*  Currently unused! */
       .group_image p {
           display: none;
           font-size: 1.4svw;

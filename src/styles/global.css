@@ -1,29 +1,71 @@
 :root {
     --color-primary: rgb(124, 12, 24);
-    --color-secondary: rgb(213, 79, 80);
-    --color-accent: rgb(24, 30, 49);
-    --color-warning: rgba(202, 121, 45, 1);
-    --color-danger: rgba(180, 25, 14, 1);
-    --color-success: rgba(77, 137, 101, 1);
+    --color-secondary: rgb(194, 54, 54);
     --color-dark: rgb(78, 8, 8);
-    --color-light: rgb(204, 126, 126);
-    --color-info: rgba(25, 28, 38, 1);
+    --color-light: rgb(231, 221, 221);
+    --color-background-primary: rgb(18, 21, 27);
+    --color-background-secondary: rgb(20, 25, 43);
 
+    --color-danger: rgb(194, 54, 54);
+    --color-warning: rgba(202, 121, 45, 1);
+    --color-success: rgba(77, 137, 101, 1);
     --primary-color-gradient: linear-gradient(45deg,
             var(--color-primary),
             var(--color-light) 30%,
             white 60%);
 
-    --text-font-size: 1.1svw;
-    --text-line-height: 1.3svw;
+    --text-font-size: 1svw;
+    --text-line-height: 1.2svw;
     --text-color-standard: rgb(255, 255, 255);
+    --text-color-dark: rgba(25, 28, 38, 1);
+    --box-shadow: rgba(0, 0, 0, 0.596);
+    --text-shadow: rgba(0, 0, 0, 0.432);
 
 }
 
+@keyframes fly {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInBars {
+    from {
+        background-position: 100% 0;
+    }
+
+    to {
+        background-position: 0 0;
+    }
+}
+
+@keyframes slice {
+    0% {
+        background-position: 0 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000%;
+    }
+
+    100% {
+        background-position: 1000%;
+    }
+}
+
 html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    background-size: 224px;
+    font-family: sans-serif;
+    background: rgb(19, 21, 26);
 }
 
 .hidden {

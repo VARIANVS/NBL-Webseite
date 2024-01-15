@@ -25,8 +25,8 @@ const {
   headline2 = "Das bieten wir",
   headline3 = "Veranstaltungen",
   headline4 = "Darstellung",
-  headline5 = "Die Mitglieder",
-  headline6 = "Kontaktiert uns",
+  headline5 = "Mitglieder",
+  headline6 = "Kontaktiere uns",
   text1 = "Rom braucht dich!\nEgal ob als Zivil oder Militär.\nDu bist herzlich eingeladen.",
   text2 = "euch!",
   text3 = "auf welchen ihr uns in diesem Jahr antreffen könnt.",
@@ -43,7 +43,10 @@ const {
 ---
 
 <div class="grid_box">
-  <h1>Unser Aufgebot</h1>
+  <!-- Headline -->
+  <!-- <h1>Wähle deine Reise</h1> -->
+  <!-- Headline -->
+
   <div class="grid">
     <div class="container">
       <h2>{headline1}</h2>
@@ -91,30 +94,38 @@ const {
 </div>
 <style>
   .grid_box {
-    background: var(--color-accent);
+    background: var(--color-dark);
     padding: 0.1em 5em 5em;
+    box-shadow: 0px 0px 6px 0px var(--box-shadow);
   }
 
+  /* Headline */
   h1 {
-    color: var(--color-primary);
     text-align: center;
-    padding-bottom: 0.3em;
+    max-width: 100%;
+    color: var(--text-color-dark);
+    font-size: calc(var(--text-font-size) + 0.5svw);
+    padding: 2svw;
+    text-shadow: 2px 4px 2px var(--text-shadow);
   }
+  /* Headline */
 
   .grid {
     text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 3svw;
+    margin-top: 4svw;
   }
 
   .container {
-    background-color: var(--color-dark);
+    background-color: var(--color-background-secondary);
     color: var(--text-color-standard);
     padding: 20px;
     border-radius: 8px;
     cursor: pointer;
     position: relative;
+    box-shadow: 0px 1px 6px 1px var(--box-shadow);
   }
 
   .link {
