@@ -1,9 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import TopBar from "../components/top_bar.astro";
 ---
 
 <Layout title="Karriere">
+  <TopBar />
+  <div>
+    <img
+      class="group_image"
+      src="/public/genau_du_cut.jpg"
+      alt="Genau dich suchen wir!"
+    />
+  </div>
   <h1>Deine Karriere</h1>
+
   <h2>Junge aufstrebende und innovative Römergruppe sucht Verstärkung</h2>
   <ul>
     Wir bieten dir:
@@ -42,3 +52,17 @@ import Layout from "../layouts/Layout.astro";
     während den Römertagen einbezogen werden
   </p>
 </Layout>
+
+<style>
+  h1 {
+  }
+
+  /* Hero Image */
+
+  .group_image img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 6px 0px var(--box-shadow);
+  }
+</style>

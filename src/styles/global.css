@@ -1,6 +1,7 @@
 :root {
     --color-primary: rgb(124, 12, 24);
     --color-secondary: rgb(194, 54, 54);
+    --color-tertiary: rgb(60, 151, 255);
     --color-dark: rgb(78, 8, 8);
     --color-light: rgb(231, 221, 221);
     --color-background-primary: rgb(18, 21, 27);
@@ -19,9 +20,9 @@
     --box-shadow: rgba(0, 0, 0, 0.596);
     --text-shadow: rgba(0, 0, 0, 0.432);
 
-    --text-font-size: 1svw;
-    --text-font-size-mobile: 3svw;
-    --text-line-height: 1.2svw;
+    --text-font-size: 1.125rem;
+    --text-font-size-mobile: 1rem;
+    --text-line-height: 0.1rem;
 
 }
 
@@ -85,13 +86,38 @@
     }
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(20px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
 html {
     font-family: sans-serif;
     background: rgb(19, 21, 26);
+    color: var(--text-color-standard);
 }
 
 .hidden {
     display: none;
+}
+
+img {
+    max-width: 100%;
 }
 
 @media (min-width: 250px) {
