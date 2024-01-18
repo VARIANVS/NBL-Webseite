@@ -9,31 +9,22 @@ let year = currentTime.getFullYear();
     2005 - {year} Copyright &copy; Historischer Verein Welzheimer Wald e.V. - Alle
     Rechte Vorbehalten.
   </p>
-  <ul>
-    <li>
-      <a href="/impressum.html" class="link-grey">[Impressum & Datenschutz]</a>
-    </li>
-  </ul>
+  <a href="/impressum.html" class="link-grey">[Impressum & Datenschutz]</a>
 </footer>
 
 <style>
-  footer {
-    background: var(--color-dark);
-    font-size: calc(0.75rem + var(--font-scale));
-    padding-bottom: 32px;
-    color: beige;
-  }
+  @media (min-width: 250px) {
+    footer {
+      z-index: -1;
+      text-align: center;
+      font-size: calc(var(--text-font-size) - 0.25rem);
+      padding: 1rem 1rem 2rem 1rem;
+      color: beige;
+    }
 
-  footer > ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .link-grey {
-    color: beige;
-    text-decoration: none;
+    .link-grey {
+      color: beige;
+      text-decoration: none;
+    }
   }
 </style>

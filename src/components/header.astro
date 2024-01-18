@@ -40,7 +40,7 @@ import "../styles/global.css";
     .logo_header {
       max-width: 50%;
       position: fixed;
-      z-index: 1;
+      z-index: 10;
       opacity: 0;
       pointer-events: none;
       transition:
@@ -54,7 +54,7 @@ import "../styles/global.css";
 
     /* Display the logo when menu is toggled */
  #menuToggle input:checked ~ .logo_link .logo_header {
-      opacity: 1;
+      opacity: 10;
       top: 0;
       transform: translateY(0%);
       pointer-events: auto;
@@ -65,7 +65,7 @@ import "../styles/global.css";
       position: fixed;
       top: 40px;
       right: 50px;
-      z-index: 1;
+      z-index: 10;
     }
 
     #menuToggle a {
@@ -84,7 +84,7 @@ import "../styles/global.css";
       margin-bottom: 4px;
       background: #ffffff;
       border-radius: 3px;
-      z-index: 1;
+      z-index: 10;
       animation: fly 1s forwards;
       transition: 0.5s;
     }
@@ -111,7 +111,7 @@ import "../styles/global.css";
       height: 20px;
       top: 15px;
       right: 16px;
-      z-index: 2;
+      z-index: 20;
     }
 
     /* Belongs to the clickable container 2 */
@@ -151,7 +151,7 @@ import "../styles/global.css";
     /* White menu column creation */
     #menu::after {
       content: "";
-      z-index: 2;
+      z-index: 20;
       background: var(--color-light);
       width: 56px;
       height: 100%;
@@ -191,7 +191,7 @@ import "../styles/global.css";
       background-color: var(--text-color-dark);
       text-shadow: 2px 4px 2px var(--text-shadow);
       display: block;
-      width: 1000px;
+      width: 50rem;
       height: 2px;
       position: absolute;
       bottom: 0;

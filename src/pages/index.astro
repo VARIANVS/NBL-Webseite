@@ -2,29 +2,27 @@
 import "../styles/index.css";
 import Layout from "../layouts/Layout.astro";
 import Grid from "../components/grid.astro";
+import TopBar from "../components/top_bar.astro";
 ---
 
 <Layout title="NVMERVS BRITTONVM">
   <main>
-    <a href="index.html">
-      <img
-        class="logo"
-        src="/nbl_logo.png"
-        alt="Das offizielle Numerus Brittonum Logo"
-      />
-    </a>
+    <TopBar />
     <div class="group_image">
-      <img src="/nbl_gruppenbild_1_cut.jpg" alt="Das Gruppenbild" />
+      <img
+        src="/public/nbl_gruppenbild_1_cut_upscaled.jpg"
+        alt="Das Gruppenbild"
+      />
       <p><strong>Der Limes lebt – Werde ein Teil davon!</strong></p>
     </div>
     <div class="headline">
       <h1>
-        <strong id="headline_1_left">
+        <strong id="headline_1_upper">
           Im Welzheimer Ostkastell daheim...</strong
         >
         <br />
         <br />
-        <strong id="headline_1_right">...am ganzen Limes entlang zuhause</strong
+        <strong id="headline_1_lower">...am ganzen Limes entlang zuhause</strong
         >
       </h1>
     </div>
@@ -36,7 +34,7 @@ import Grid from "../components/grid.astro";
       />
     </div>
     <div class="container_1">
-      <p class="container_1_paragraph">
+      <p class="container_1_p">
         Willkommen bei der Römergruppe Numerus Brittonum! Tauchen Sie ein in die
         faszinierende Welt des antiken Roms! Die Mitglieder des Numerus
         Brittonum, eine vielfältige Gemeinschaft mit einer tiefen Leidenschaft
@@ -63,15 +61,13 @@ import Grid from "../components/grid.astro";
     </div>
     <div class="headline_2">
       <h2>
-        <strong id="headline_2_left">Der Limes lebt</strong>
+        <strong id="headline_2_upper">Der Limes lebt</strong>
         <br />
         <br />
-        <strong id="headline_2_right">Werde ein Teil davon</strong>
+        <strong id="headline_2_lower">Werde ein Teil davon</strong>
       </h2>
     </div>
-
     <Grid />
-
     <div class="section_4">
       <img src="/genau_du_2.jpg" alt="Bild" />
       <div class="content">
@@ -87,17 +83,19 @@ import Grid from "../components/grid.astro";
   </main>
 
   <style>
-    /* CONTAINRER HIER LASSEN! SONST FUNKTIONIERT GRID NICHT MEHR RICHTIG, wieso auch immer. */
-    .container {
-      display: flex;
-      margin: auto;
-      padding: 1rem;
-      width: 800px;
-      max-width: calc(100% - 2rem);
-      color: var(--text-color-standard);
-      font-size: var(--text-font-size);
-      line-height: 1.6;
-      z-index: 0;
+    @media (min-width: 250px) {
+      /* CONTAINRER HIER LASSEN! SONST FUNKTIONIERT GRID NICHT MEHR RICHTIG, wieso auch immer. */
+      .container {
+        display: flex;
+        margin: auto;
+        padding: 1rem;
+        width: 800px;
+        max-width: calc(100% - 2rem);
+        color: var(--text-color-standard);
+        font-size: var(--text-font-size);
+        line-height: 1.6;
+        z-index: 0;
+      }
     }
   </style>
 </Layout>

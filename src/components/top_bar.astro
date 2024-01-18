@@ -13,20 +13,22 @@ import "../styles/global.css";
 </div>
 
 <style>
-  .logo {
-    display: block;
-    position: absolute;
-    top: 1.5em;
-    left: 10svw;
-    z-index: 1;
-    max-width: 50%;
-    height: auto;
-    transition: transform 0.3s ease;
-    animation: fly 1s;
-  }
+  @media (min-width: 250px) {
+    .logo {
+      display: block;
+      position: absolute;
+      top: 1.5em;
+      left: 10svw;
+      z-index: 1;
+      max-width: 50%;
+      height: auto;
+      transition: transform 0.3s ease;
+      animation: fly 1s;
+    }
 
-  .logo:hover {
-    transform: translateY(-15px);
-    transition: transform 0.3s ease;
+    .logo:hover {
+      transform: translateY(-15px);
+      transition: transform 0.3s ease;
+    }
   }
 </style>

@@ -46,7 +46,6 @@ const {
   <!-- Headline -->
   <!-- <h1>Wähle deine Reise</h1> -->
   <!-- Headline -->
-
   <div class="grid">
     <div class="container">
       <h2>{headline1}</h2>
@@ -150,6 +149,15 @@ const {
     .container:hover p {
       color: var(--color-primary);
     }
+
+    .link {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
   }
 
   @media (min-width: 1000px) {
@@ -157,10 +165,9 @@ const {
       grid-template-columns: repeat(3, minmax(250px, 1fr));
       margin-top: 4rem;
     }
-
+  }
 
   @media (min-width: 768px) {
-
     .grid_box {
       padding: 0.1rem 5rem 5rem;
     }

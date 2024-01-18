@@ -5,64 +5,158 @@ import TopBar from "../components/top_bar.astro";
 
 <Layout title="Karriere">
   <TopBar />
-  <div>
-    <img
-      class="group_image"
-      src="/public/genau_du_cut.jpg"
-      alt="Genau dich suchen wir!"
-    />
+  <div class="group_image">
+    <img src="/public/genau_du_cut_upscaled.jpg" alt="Genau dich suchen wir!" />
+    <div class="headline">
+      <h1>
+        <strong id="headline_1_upper">Deine Chance</strong>
+        <br />
+        <br />
+        <strong id="headline_1_lower">Werde Römer!</strong>
+      </h1>
+    </div>
   </div>
-  <h1>Deine Karriere</h1>
-
-  <h2>Junge aufstrebende und innovative Römergruppe sucht Verstärkung</h2>
-  <ul>
-    Wir bieten dir:
-    <li>ein Hobby für Einzelne oder die ganze Familie</li>
-    <li>eine Freizeitbeschäftigung für jedes Alter</li>
-    <li>
-      Möglichkeiten zur individuellen Entfaltung und gemeinschaftlichen Handeln
-    </li>
-    <li>ein Tätigkeitsfeld für die Gemeinnützigkeit</li>
-  </ul>
-  <ul>
-    Du bringst mit:
-    <li>eine Faszination für die römische Sache und ihre heutigen Spuren?</li>
-    <li>Interesse für ein aktives und außergewöhnliches Hobby?</li>
-    <li>tatkräftiges Einbringen in eine Gemeinschaft?</li>
-    <li>ein “wehrtaugliches” Alter von 14 Jahren bis Veteran?</li>
-  </ul>
-  <p>
-    Leistungskatalog: „Römer auf Probe“ – Römertage exklusiv und live mit-
-    erleben Geboten werden: Aktive Teilnahme und Unterbringung bei den IV.
-    Welzheimer Römertagen 2014: Mittendrin im Römerlager, Schlafen im
-    Militärzelt, römisches Essen mit den Kameraden teilen, Drill und Alltag in
-    einem Kastell erspüren, den Ernstfall proben… Alles was zum Römersein
-    gehört: Intensives Ausprobieren, Mitmachen, Einblicke hinter die Kulisse,
-    interessante Gespräche und Begegnungen am Lagerfeuer Fachliche Betreuung
-    während und vor den Römertagen Mappe mit Ausbildung- und Infomaterial und
-    einer Bilddokumentation Professionelle und historisch authentische
-    Einführung in das Leben in einem römischen Kastell (Ausbildung….) Teilnahme
-    an einem speziellen Vorbereitungsprogramm (Trainingseinheiten…) Authentische
-    antike Verpflegung und Freizeitprogramm Anprobieren und Testen römischer
-    Soldatenausrüstung Stellung einer römischen Grundausrüstung über die
-    Ausbildungszeit Für interessierte Frauen kann ein entsprechendes ziviles
-    Angebot (Handwerk, Kochen… angeboten werden Dieses Angebot ist unverbindlich
-    und verlangt keine weitere Verpflichtung und ist als exklusives
-    Schnupperangebot gedacht Ehepartner oder Familienangehörige können ggf. auch
-    während den Römertagen einbezogen werden
+  <div class="section_1">
+    <h2>Junge aufstrebende und innovative Römergruppe sucht Verstärkung</h2>
+    <br />
+    <ul>
+      <strong>Wir bieten dir:</strong>
+      <li>ein Hobby für Einzelne oder die ganze Familie</li>
+      <li>eine Freizeitbeschäftigung für jedes Alter</li>
+      <li>
+        Möglichkeiten zur individuellen Entfaltung und gemeinschaftlichen
+        Handeln
+      </li>
+      <li>ein Tätigkeitsfeld für die Gemeinnützigkeit</li>
+    </ul>
+    <br />
+    <ul>
+      <strong>Du bringst mit:</strong>
+      <li>eine Faszination für die römische Sache und ihre heutigen Spuren</li>
+      <li>Interesse für ein aktives und außergewöhnliches Hobby</li>
+      <li>tatkräftiges Einbringen in eine Gemeinschaft</li>
+      <li>ein “wehrtaugliches” Alter von 14 Jahren bis Veteran</li>
+    </ul>
+  </div>
+  <h3>Römer auf Probe</h3>
+  <p class="section_2_p">
+    Römertage exklusiv und live mit- erleben Geboten werden: Aktive Teilnahme
+    und Unterbringung bei den IV. Welzheimer Römertagen 2014: Mittendrin im
+    Römerlager, Schlafen im Militärzelt, römisches Essen mit den Kameraden
+    teilen, Drill und Alltag in einem Kastell erspüren, den Ernstfall proben…
+    Alles was zum Römersein gehört: Intensives Ausprobieren, Mitmachen,
+    Einblicke hinter die Kulisse, interessante Gespräche und Begegnungen am
+    Lagerfeuer Fachliche Betreuung während und vor den Römertagen Mappe mit
+    Ausbildung- und Infomaterial und einer Bilddokumentation Professionelle und
+    historisch authentische Einführung in das Leben in einem römischen Kastell
+    (Ausbildung….) Teilnahme an einem speziellen Vorbereitungsprogramm
+    (Trainingseinheiten…) Authentische antike Verpflegung und Freizeitprogramm
+    Anprobieren und Testen römischer Soldatenausrüstung Stellung einer römischen
+    Grundausrüstung über die Ausbildungszeit Für interessierte Frauen kann ein
+    entsprechendes ziviles Angebot (Handwerk, Kochen… angeboten werden Dieses
+    Angebot ist unverbindlich und verlangt keine weitere Verpflichtung und ist
+    als exklusives Schnupperangebot gedacht Ehepartner oder Familienangehörige
+    können ggf. auch während den Römertagen einbezogen werden
   </p>
 </Layout>
 
 <style>
-  h1 {
+  @media (min-width: 250px) {
+    .group_image {
+      position: relative;
+      max-width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .headline {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    h1 {
+      font-size: calc(var(--text-font-size-mobile) + 0.5rem);
+      z-index: 0;
+      text-align: center;
+      margin: auto;
+      padding: 2rem 1rem;
+      text-shadow: 2px 4px 2px var(--text-shadow);
+    }
+
+    #headline_1_upper {
+      margin: auto;
+      color: var(--color-light);
+    }
+
+    #headline_1_lower {
+      margin: auto;
+      color: var(--color-secondary);
+    }
+
+    h2 {
+      text-align: center;
+      margin: auto;
+      font-size: calc(var(--text-font-size-mobile) + 0.25svh);
+      padding: 0rem 0 1rem 0;
+      text-shadow: 2px 4px 2px var(--text-shadow);
+    }
+
+    .section_1 {
+      z-index: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      max-width: 45rem;
+      margin: auto;
+      padding: 2rem 1rem 2rem;
+      background-color: var(--color-primary);
+      box-shadow: 0px 0px 6px 0px var(--box-shadow);
+    }
+
+    .section_1 ul {
+      list-style-type: square;
+      list-style-position: inside;
+      text-align: start;
+      max-width: 500px;
+      margin: auto;
+      padding: 0rem 0rem 0rem;
+    }
+
+    h3 {
+      text-align: center;
+      margin: auto;
+      font-size: calc(var(--text-font-size-mobile) + 0.25svh);
+      padding: 2rem 0;
+      text-shadow: 2px 4px 2px var(--text-shadow);
+    }
+
+    .section_2_p {
+      text-align: center;
+      margin: auto;
+      max-width: 800px;
+      padding: 1rem 1rem 2rem;
+      background-color: var(--color-primary);
+      box-shadow: 0px 0px 6px 0px var(--box-shadow);
+    }
   }
 
-  /* Hero Image */
-
-  .group_image img {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    box-shadow: 0px 0px 6px 0px var(--box-shadow);
+  @media (min-width: 768px) {
+    h1 {
+      font-size: calc(var(--text-font-size-mobile) + 0rem);
+      z-index: 0;
+      position: absolute;
+      max-width: 100%;
+      margin: auto;
+      left: 50%;
+      top: 50%;
+      padding: 2rem 1rem;
+      transform: translate(-50%, -50%);
+      background-color: var(--box-background);
+      box-shadow: 0 4px 6px var(--box-shadow);
+      text-shadow: 2px 4px 2px var(--text-shadow);
+    }
   }
 </style>

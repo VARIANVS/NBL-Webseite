@@ -1,7 +1,92 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import TopBar from "../components/top_bar.astro";
+let currentTime = new Date();
+let year = currentTime.getFullYear();
+
+interface Props {
+  event01: string;
+  event02: string;
+  event03: string;
+  event04: string;
+  event05: string;
+  event06: string;
+  event07: string;
+  event08: string;
+  event09: string;
+  event10: string;
+  date01: string;
+  date02: string;
+  date03: string;
+  date04: string;
+  date05: string;
+  date06: string;
+  date07: string;
+  date08: string;
+  date09: string;
+  date10: string;
+  location01: string;
+  location02: string;
+  location03: string;
+  location04: string;
+  location05: string;
+  location06: string;
+  location07: string;
+  location08: string;
+  location09: string;
+  location10: string;
+}
+
+const {
+  event01 = "Event 1"
+  event02 = "Event 2"
+  event03 = "Event 3"
+  event04 = "Event 4"
+  event05 = "Event 5"
+  event06 = "Event 6"
+  event07 = "Event 7"
+  event08 = "Event 8"
+  event09 = "Event 9"
+  event10 = "Event 10"
+  date01 = "Datum 1"
+  date02 = "Datum 2"
+  date03 = "Datum 3"
+  date04 = "Datum 4"
+  date05 = "Datum 5"
+  date06 = "Datum 6"
+  date07 = "Datum 7"
+  date08 = "Datum 8"
+  date09 = "Datum 9"
+  date10 = "Datum 10"
+  location01 = "Ort 1"
+  location02 = "Ort 2"
+  location03 = "Ort 3"
+  location04 = "Ort 4"
+  location05 = "Ort 5"
+  location06 = "Ort 6"
+  location07 = "Ort 7"
+  location08 = "Ort 8"
+  location09 = "Ort 9"
+  location10 = "Ort 10"
+} = Astro.props;
 ---
 
 <Layout title="Events">
-  <h1>Events</h1>
+  <TopBar />
+  <h1>Events {year}</h1>
+  <ul>
+    <li>{event01}
+    <li>{date01}</li>
+  <li>{location01}</li>
+</li>
+    <li>{event02}</li>
+    <li>{event03}</li>
+    <li>{event04}</li>
+    <li>{event05}</li>
+    <li>{event06}</li>
+    <li>{event07}</li>
+    <li>{event08}</li>
+    <li>{event09}</li>
+    <li>{event10}</li>
+  </ul>
 </Layout>
