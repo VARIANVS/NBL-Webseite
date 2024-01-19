@@ -1,9 +1,102 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import TopBar from "../components/top_bar.astro";
+
+export const props = {
+  spoilers: [
+    {
+      label: "MICCVS",
+      content:
+        "Marius stieß mehr oder weniger zufällig auf uns und wir auf ihn. Innerhalb kürzester Zeit legte er sich eine Ausrüstung zu und verstärkt die lokale Garnison.",
+      image: "/path/to/miccvs.jpg",
+    },
+    {
+      label: "Spoiler 2",
+      content:
+        "This is different content for the second spoiler. You can customize it as needed.",
+      image: "/path/to/some-image.jpg",
+    },
+    {
+      label: "Spoiler 3",
+      content:
+        "Another unique content for the third spoiler. Customize it based on your requirements.",
+      image: "/path/to/another-image.jpg",
+    },
+  ],
+};
 ---
 
-<Layout title="Die Mitglieder">
+<Layout title="Clickable Spoiler">
   <TopBar />
-  <h1>Die Mitglieder</h1>
+  <h1>LEBENSLÄUFE AM LIMES</h1>
+  <p>
+    Leben am Limes ist die personifizierte, exemplarische Darstellung
+    vergangener Lebensformen und Lebenswelten einer Grenzgesellschaft des 3. Jhd
+    in den germanischen Provinzen. Diese biographische Annäherung erfolgt, um in
+    der Vermittlung einen lebensweltlichen Bezug zu den nachgewiesenen Personen
+    und Rollen in der antiken Grenzgesellschaft zu erreichen. Diese können in
+    einer Entsprechung oder Kontrastierung eine emotionale Verbindung zur
+    modernen Erfahrungswelt der Menschen schaffen (Arbeit, Familie, Kindheit,
+    Alter). Dies ist der Schlüssel, um das Limesleben für heute nahe zu bringen.
+  </p>
+  <br />
+  <p>
+    Die einzelnen Biografien sind sorgfältig entworfen und sollen in der
+    Zusammenschau einen repräsentativen Querschnitt der Limesbewohner abbilden.
+    Entweder sind die jeweiligen Namen nachgewiesen oder die einzelne Rolle,
+    Funktion des Mitglieds. Da wir in unserer Vermittlung nie die Gegenwart aus
+    den Augen nehmen, wollen wir uns auch als die Menschen vorstellen, die sich
+    der Antike im 21. Jahrhundert widmen. Diese Leidenschaft verbindet uns
+    miteinander und vielleicht auch mit Ihnen? Nun wünschen wir eine
+    interessante Lektüre!
+  </p>
+  <div class="spoilers-grid">
+    {
+      props.spoilers.map((spoiler, index) => (
+        <div class="spoiler" key={index}>
+          <input type="checkbox" id={`spoilerCheckbox${index}`} />
+          <label for={`spoilerCheckbox${index}`} class="spoiler-label">
+            {spoiler.label}
+          </label>
+          <div class="spoiler-content">
+            <img src={spoiler.image} alt={`Spoiler ${index}`} />
+            <p>{spoiler.content}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
 </Layout>
+
+<style>
+  .spoilers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .spoiler {
+    margin: 20px;
+  }
+
+  .spoiler-label {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: inline-block;
+  }
+
+  .spoiler-content {
+    display: none;
+    margin-top: 10px;
+  }
+
+  .spoiler-content img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  input:checked + .spoiler-label + .spoiler-content {
+    display: block;
+  }
+</style>
