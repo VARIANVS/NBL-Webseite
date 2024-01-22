@@ -1,6 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import TopBar from "../components/top_bar.astro";
+
+import Gallery from "../components/Gallery.astro";
+
+const images = [
+  { src: "/public/besuch_1.jpg", alt: "Image 1" },
+  { src: "/public/besuch_2.jpg", alt: "Image 2" },
+  { src: "/public/besuch_3.jpg", alt: "Image 3" },
+  { src: "/public/besuch_4.jpg", alt: "Image 4" },
+  { src: "/public/aufbau_1.jpg", alt: "Image 5" },
+];
+
+export default function Home() {
+  return (
+    <div>
+      <h1>Welcome to my Gallery</h1>
+      <Gallery images={images} />
+    </div>
+  );
+}
 ---
 
 <Layout title="Über uns">
@@ -74,6 +93,18 @@ import TopBar from "../components/top_bar.astro";
 
 <style>
   @media (min-width: 250px) {
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
     .group_image {
       position: relative;
       max-width: 100%;
@@ -90,30 +121,36 @@ import TopBar from "../components/top_bar.astro";
     }
 
     h1 {
-      font-size: calc(var(--text-font-size-mobile) + 0.5rem);
+      font-size: calc(
+        var(--your-text-font-size-mobile) + 0.5rem
+      ); /* Replace with your actual variable */
       z-index: 0;
       text-align: center;
       margin: auto;
       padding: 2rem 1rem;
-      text-shadow: 2px 4px 2px var(--text-shadow);
+      text-shadow: 2px 4px 2px var(--your-text-shadow); /* Replace with your actual variable */
     }
 
     #headline_1_upper {
       margin: auto;
-      color: var(--color-light);
+      color: var(--your-color-light); /* Replace with your actual variable */
     }
 
     #headline_1_lower {
       margin: auto;
-      color: var(--color-secondary);
+      color: var(
+        --your-color-secondary
+      ); /* Replace with your actual variable */
     }
 
     h2 {
       text-align: center;
       margin: auto;
-      font-size: calc(var(--text-font-size-mobile) + 0.25svh);
+      font-size: calc(
+        var(--your-text-font-size-mobile) + 0.25svh
+      ); /* Replace with your actual variable */
       padding: 0rem 0 1rem 0;
-      text-shadow: 2px 4px 2px var(--text-shadow);
+      text-shadow: 2px 4px 2px var(--your-text-shadow); /* Replace with your actual variable */
     }
 
     .section_1 {
@@ -123,16 +160,20 @@ import TopBar from "../components/top_bar.astro";
       max-width: 800px;
       margin: auto;
       padding: 2rem 1rem 2rem;
-      background-color: var(--color-primary);
-      box-shadow: 0px 0px 6px 0px var(--box-shadow);
+      background-color: var(
+        --your-color-primary
+      ); /* Replace with your actual variable */
+      box-shadow: 0px 0px 6px 0px var(--your-box-shadow); /* Replace with your actual variable */
     }
 
     h3 {
       text-align: center;
       margin: auto;
-      font-size: calc(var(--text-font-size-mobile) + 0.25svh);
+      font-size: calc(
+        var(--your-text-font-size-mobile) + 0.25svh
+      ); /* Replace with your actual variable */
       padding: 2rem 0;
-      text-shadow: 2px 4px 2px var(--text-shadow);
+      text-shadow: 2px 4px 2px var(--your-text-shadow); /* Replace with your actual variable */
     }
 
     .section_2_p {
@@ -140,8 +181,10 @@ import TopBar from "../components/top_bar.astro";
       margin: auto;
       max-width: 800px;
       padding: 1rem 1rem 2rem;
-      background-color: var(--color-primary);
-      box-shadow: 0px 0px 6px 0px var(--box-shadow);
+      background-color: var(
+        --your-color-primary
+      ); /* Replace with your actual variable */
+      box-shadow: 0px 0px 6px 0px var(--your-box-shadow); /* Replace with your actual variable */
     }
   }
 

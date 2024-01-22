@@ -28,47 +28,81 @@ export const props = {
 
 <Layout title="Clickable Spoiler">
   <TopBar />
-  <h1>LEBENSLÄUFE AM LIMES</h1>
-  <p>
-    Leben am Limes ist die personifizierte, exemplarische Darstellung
-    vergangener Lebensformen und Lebenswelten einer Grenzgesellschaft des 3. Jhd
-    in den germanischen Provinzen. Diese biographische Annäherung erfolgt, um in
-    der Vermittlung einen lebensweltlichen Bezug zu den nachgewiesenen Personen
-    und Rollen in der antiken Grenzgesellschaft zu erreichen. Diese können in
-    einer Entsprechung oder Kontrastierung eine emotionale Verbindung zur
-    modernen Erfahrungswelt der Menschen schaffen (Arbeit, Familie, Kindheit,
-    Alter). Dies ist der Schlüssel, um das Limesleben für heute nahe zu bringen.
-  </p>
-  <br />
-  <p>
-    Die einzelnen Biografien sind sorgfältig entworfen und sollen in der
-    Zusammenschau einen repräsentativen Querschnitt der Limesbewohner abbilden.
-    Entweder sind die jeweiligen Namen nachgewiesen oder die einzelne Rolle,
-    Funktion des Mitglieds. Da wir in unserer Vermittlung nie die Gegenwart aus
-    den Augen nehmen, wollen wir uns auch als die Menschen vorstellen, die sich
-    der Antike im 21. Jahrhundert widmen. Diese Leidenschaft verbindet uns
-    miteinander und vielleicht auch mit Ihnen? Nun wünschen wir eine
-    interessante Lektüre!
-  </p>
-  <div class="spoilers-grid">
-    {
-      props.spoilers.map((spoiler, index) => (
-        <div class="spoiler" key={index}>
-          <input type="checkbox" id={`spoilerCheckbox${index}`} />
-          <label for={`spoilerCheckbox${index}`} class="spoiler-label">
-            {spoiler.label}
-          </label>
-          <div class="spoiler-content">
-            <img src={spoiler.image} alt={`Spoiler ${index}`} />
-            <p>{spoiler.content}</p>
+  <div id="members_body">
+    <h1><u>LEBENSLÄUFE AM LIMES</u></h1>
+    <p>
+      Leben am Limes ist die personifizierte, exemplarische Darstellung
+      vergangener Lebensformen und Lebenswelten einer Grenzgesellschaft des 3.
+      Jhd in den germanischen Provinzen. Diese biographische Annäherung erfolgt,
+      um in der Vermittlung einen lebensweltlichen Bezug zu den nachgewiesenen
+      Personen und Rollen in der antiken Grenzgesellschaft zu erreichen. Diese
+      können in einer Entsprechung oder Kontrastierung eine emotionale
+      Verbindung zur modernen Erfahrungswelt der Menschen schaffen (Arbeit,
+      Familie, Kindheit, Alter). Dies ist der Schlüssel, um das Limesleben für
+      heute nahe zu bringen.
+    </p>
+    <br />
+    <p>
+      Die einzelnen Biografien sind sorgfältig entworfen und sollen in der
+      Zusammenschau einen repräsentativen Querschnitt der Limesbewohner
+      abbilden. Entweder sind die jeweiligen Namen nachgewiesen oder die
+      einzelne Rolle, Funktion des Mitglieds. Da wir in unserer Vermittlung nie
+      die Gegenwart aus den Augen nehmen, wollen wir uns auch als die Menschen
+      vorstellen, die sich der Antike im 21. Jahrhundert widmen. Diese
+      Leidenschaft verbindet uns miteinander und vielleicht auch mit Ihnen? Nun
+      wünschen wir eine interessante Lektüre!
+    </p>
+    <div class="spoilers-grid">
+      {
+        props.spoilers.map((spoiler, index) => (
+          <div class="spoiler" key={index}>
+            <input type="checkbox" id={`spoilerCheckbox${index}`} />
+            <label for={`spoilerCheckbox${index}`} class="spoiler-label">
+              {spoiler.label}
+            </label>
+            <div class="spoiler-content">
+              <img src={spoiler.image} alt={`Spoiler ${index}`} />
+              <p>{spoiler.content}</p>
+            </div>
           </div>
-        </div>
-      ))
-    }
+        ))
+      }
+    </div>
   </div>
 </Layout>
 
 <style>
+  #members_body {
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 45rem;
+    margin: 8rem auto;
+    box-shadow: 0px 0px 6px 0px var(--box-shadow);
+    padding: 2rem 0 4rem;
+    text-underline-offset: 0.5rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: calc(var(--text-font-size-mobile) + 0.5rem);
+    margin: auto;
+    padding: 2rem 0;
+    text-shadow: 2px 4px 2px var(--text-shadow);
+  }
+
+  p {
+    font-size: var(--text-font-size-mobile);
+    padding: 1rem 1rem 1rem;
+    background-color: var(--color-primary);
+    box-shadow: 0px 0px 6px 0px var(--box-shadow);
+  }
+
   .spoilers-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -82,7 +116,7 @@ export const props = {
   .spoiler-label {
     cursor: pointer;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-light-2);
     display: inline-block;
   }
 

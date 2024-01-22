@@ -9,6 +9,15 @@ let year = currentTime.getFullYear();
     2005 - {year} Copyright &copy; Historischer Verein Welzheimer Wald e.V. - Alle
     Rechte Vorbehalten.
   </p>
+  <ul id="menu">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="career.html">KARRIERE</a></li>
+    <li><a href="offers.html">ANGEBOT</a></li>
+    <li><a href="events.html">EVENTS</a></li>
+    <li><a href="about.html">ÜBER&nbsp;UNS</a></li>
+    <li><a href="members.html">MITGLIEDER</a></li>
+    <li><a href="contact.html">KONTAKT</a></li>
+  </ul>
   <a href="/impressum.html" class="link-grey">[Impressum & Datenschutz]</a>
 </footer>
 
@@ -19,12 +28,36 @@ let year = currentTime.getFullYear();
       text-align: center;
       font-size: calc(var(--text-font-size) - 0.25rem);
       padding: 1rem 1rem 2rem 1rem;
-      color: beige;
+      color: var(--color-light-2);
+    }
+
+    a {
+      text-decoration: none;
     }
 
     .link-grey {
-      color: beige;
-      text-decoration: none;
+      color: var(--color-light-2);
+    }
+
+    #menu {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-left: -2.5rem;
+    }
+
+    #menu a {
+      font-weight: bold;
+      color: var(--color-background-primary);
+      width: 115px;
+      height: 59px;
+      background-image: url("/public/pillar_2_horizontal.png");
+      background-size: cover;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 </style>
