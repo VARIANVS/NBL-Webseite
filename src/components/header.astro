@@ -74,7 +74,7 @@ import "../styles/global.css";
     }
 
     #menuToggle a:hover {
-      color: var(--color-tertiary);
+      color: var(--text-color-standard);
     }
 
     /* Hamburger button creation */
@@ -85,7 +85,7 @@ import "../styles/global.css";
       background: #ffffff;
       border-radius: 3px;
       z-index: 10;
-      animation: fly 1s forwards;
+      animation: fly 0.8s forwards;
       transition: 0.5s;
     }
 
@@ -146,6 +146,7 @@ import "../styles/global.css";
       -webkit-transition: top 0.8s ease;
       -o-transition: top 0.8s ease;
       transition: top 0.8s ease;
+      pointer-events: none; /* To make the image gallery clickable as long as menu is not toggled */
     }
 
     #menu a {
@@ -189,7 +190,7 @@ import "../styles/global.css";
       height: 2px;
       position: absolute;
       bottom: 0;
-      transform: translateX(-50%); /* Zentriert den Balken horizontal */
+      transform: translateX(-50%);
       transition: transform 0.3s ease;
     }
 
@@ -218,6 +219,7 @@ import "../styles/global.css";
 
     #menuToggle input:checked ~ ul {
       top: 0;
+      pointer-events: auto; /* To block clicking the image gallery when menu is toggled */
     }
   }
 
@@ -230,7 +232,7 @@ import "../styles/global.css";
       padding-bottom: 100vmax;
       gap: 0.5rem;
       opacity: 0;
-      transition: 1s;
+      transition: 0.8s;
     }
 
     #menuToggle input:checked ~ #menu {

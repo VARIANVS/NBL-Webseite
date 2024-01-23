@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import TopBar from "../components/top_bar.astro";
-
 import Gallery from "../components/Gallery.astro";
 
 const images = [
@@ -11,15 +10,6 @@ const images = [
   { src: "/public/besuch_4.jpg", alt: "Image 4" },
   { src: "/public/aufbau_1.jpg", alt: "Image 5" },
 ];
-
-export default function Home() {
-  return (
-    <div>
-      <h1>Welcome to my Gallery</h1>
-      <Gallery images={images} />
-    </div>
-  );
-}
 ---
 
 <Layout title="Über uns">
@@ -89,30 +79,131 @@ export default function Home() {
     Alle haben Sie einen Anteil am Leben am Limes. Diesen Menschen wollen wir
     uns widmen.
   </p>
+
+  <div class="gallery">
+    <a href="#img1">
+      <img src="/public/aufbau_01.jpg" alt="Bild 1" />
+    </a>
+    <a href="#img2">
+      <img src="/public/besuch_01.jpg" alt="Bild 2" />
+    </a>
+    <a href="#img3">
+      <img src="/public/besuch_02.jpg" alt="Bild 3" />
+    </a>
+    <a href="#img4">
+      <img src="/public/besuch_03.jpg" alt="Bild 4" />
+    </a>
+    <a href="#img5">
+      <img src="/public/besuch_04.jpg" alt="Bild 5" />
+    </a>
+    <a href="#img6">
+      <img src="/public/darstellung_01.jpg" alt="Bild 6" />
+    </a>
+    <a href="#img7">
+      <img src="/public/darstellung_02.jpg" alt="Bild 7" />
+    </a>
+    <a href="#img8">
+      <img src="/public/darstellung_03.jpg" alt="Bild 8" />
+    </a>
+    <a href="#img9">
+      <img src="/public/darstellung_04.jpg" alt="Bild 9" />
+    </a>
+    <a href="#img10">
+      <img src="/public/darstellung_05.jpg" alt="Bild 10" />
+    </a>
+  </div>
+
+  <div class="lightbox" id="img1">
+    <img id="img1" src="/public/aufbau_01.jpg" alt="Bild 1" />
+    <a href="#_" class="close"></a>
+  </div>
+  <div class="lightbox" id="img2">
+    <img id="img2" src="/public/besuch_01.jpg" alt="Bild 2" />
+    <a href="#_" class="close"></a>
+  </div>
+  <div class="lightbox" id="img3">
+    <img id="img3" src="/public/besuch_02.jpg" alt="Bild 3" />
+    <a href="#_" class="close"></a>
+  </div>
+  <div class="lightbox" id="img4">
+    <img id="img4" src="/public/besuch_03.jpg" alt="Bild 4" />
+    <a href="#_" class="close"></a>
+  </div>
+  <div class="lightbox" id="img5">
+    <img id="img5" src="/public/besuch_04.jpg" alt="Bild 5" />
+    <a href="#_" class="close"></a>
+  </div>
+  <div class="lightbox" id="img6">
+    <img id="img6" src="/public/darstellung_01.jpg" alt="Bild 6" />
+    <a href="#_" class="close"></a>
+  </div>
+  <div class="lightbox" id="img7">
+    <img id="img7" src="/public/darstellung_02.jpg" alt="Bild 7" />
+    <a href="#_" class="close"></a>
+  </div>
+  <div class="lightbox" id="img8">
+    <img id="img8" src="/public/darstellung_03.jpg" alt="Bild 8" />
+    <a href="#_" class="close"></a>
+  </div>
+  <div class="lightbox" id="img9">
+    <img id="img9" src="/public/darstellung_04.jpg" alt="Bild 9" />
+    <a href="#_" class="close"></a>
+  </div>
+  <div class="lightbox" id="img10">
+    <img id="img10" src="/public/darstellung_05.jpg" alt="Bild 10" />
+    <a href="#_" class="close"></a>
+  </div>
 </Layout>
 
 <style>
   @media (min-width: 250px) {
+    /* Picture gallery GRID */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 0.7rem;
+      grid-auto-rows: 150px;
+      margin: 1rem 0;
     }
 
+    /* Gallery images styling */
     .gallery img {
       width: 100%;
-      height: auto;
-      border-radius: 8px;
+      height: 100%;
+      cursor: pointer;
+      object-fit: cover; /* Hier die gewünschte Einstellung für object-fit */
     }
 
-    .group_image {
-      position: relative;
-      max-width: 100%;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    /* Clickable lightbox styling */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
       justify-content: center;
+      align-items: center;
+    }
+
+    /* Lightbox image styling */
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      margin: auto;
+      display: block;
+    }
+
+    /* Close button styling - Whole screen */
+    .close {
+      position: absolute;
+      padding: 100%;
+    }
+
+    /* Target to display in flex when clicked on lightbox */
+    :target {
+      display: flex;
     }
 
     .headline {
@@ -121,36 +212,30 @@ export default function Home() {
     }
 
     h1 {
-      font-size: calc(
-        var(--your-text-font-size-mobile) + 0.5rem
-      ); /* Replace with your actual variable */
+      font-size: calc(var(--text-font-size-mobile) + 0.5rem);
       z-index: 0;
       text-align: center;
       margin: auto;
       padding: 2rem 1rem;
-      text-shadow: 2px 4px 2px var(--your-text-shadow); /* Replace with your actual variable */
+      text-shadow: 2px 4px 2px var(--text-shadow);
     }
 
     #headline_1_upper {
       margin: auto;
-      color: var(--your-color-light); /* Replace with your actual variable */
+      color: var(--color-light);
     }
 
     #headline_1_lower {
       margin: auto;
-      color: var(
-        --your-color-secondary
-      ); /* Replace with your actual variable */
+      color: var(--color-secondary);
     }
 
     h2 {
       text-align: center;
       margin: auto;
-      font-size: calc(
-        var(--your-text-font-size-mobile) + 0.25svh
-      ); /* Replace with your actual variable */
+      font-size: calc(var(--text-font-size-mobile) + 0.25svh);
       padding: 0rem 0 1rem 0;
-      text-shadow: 2px 4px 2px var(--your-text-shadow); /* Replace with your actual variable */
+      text-shadow: 2px 4px 2px var(--text-shadow);
     }
 
     .section_1 {
@@ -160,20 +245,16 @@ export default function Home() {
       max-width: 800px;
       margin: auto;
       padding: 2rem 1rem 2rem;
-      background-color: var(
-        --your-color-primary
-      ); /* Replace with your actual variable */
-      box-shadow: 0px 0px 6px 0px var(--your-box-shadow); /* Replace with your actual variable */
+      background-color: var(--color-primary);
+      box-shadow: 0px 0px 6px 0px var(--box-shadow);
     }
 
     h3 {
       text-align: center;
       margin: auto;
-      font-size: calc(
-        var(--your-text-font-size-mobile) + 0.25svh
-      ); /* Replace with your actual variable */
+      font-size: calc(var(--text-font-size-mobile) + 0.25svh);
       padding: 2rem 0;
-      text-shadow: 2px 4px 2px var(--your-text-shadow); /* Replace with your actual variable */
+      text-shadow: 2px 4px 2px var(--text-shadow);
     }
 
     .section_2_p {
@@ -181,13 +262,24 @@ export default function Home() {
       margin: auto;
       max-width: 800px;
       padding: 1rem 1rem 2rem;
-      background-color: var(
-        --your-color-primary
-      ); /* Replace with your actual variable */
-      box-shadow: 0px 0px 6px 0px var(--your-box-shadow); /* Replace with your actual variable */
+      background-color: var(--color-primary);
+      box-shadow: 0px 0px 6px 0px var(--box-shadow);
     }
   }
 
   @media (min-width: 768px) {
+    .gallery {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      grid-auto-rows: 200px;
+      margin: 1rem;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .gallery {
+      grid-template-columns: repeat(5, minmax(300px, 1fr));
+      grid-auto-rows: 300px;
+    }
   }
 </style>

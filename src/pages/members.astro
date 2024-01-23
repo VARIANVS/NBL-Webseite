@@ -7,26 +7,24 @@ export const props = {
     {
       label: "MICCVS",
       content:
-        "Marius stieß mehr oder weniger zufällig auf uns und wir auf ihn. Innerhalb kürzester Zeit legte er sich eine Ausrüstung zu und verstärkt die lokale Garnison.",
-      image: "/path/to/miccvs.jpg",
+        "MICCVS stieß mehr oder weniger zufällig auf uns und wir auf ihn. Innerhalb kürzester Zeit legte er sich eine Ausrüstung zu und verstärkt die lokale Garnison.",
+      image: "/public/darstellung_09.jpg",
     },
     {
       label: "Spoiler 2",
-      content:
-        "This is different content for the second spoiler. You can customize it as needed.",
-      image: "/path/to/some-image.jpg",
+      content: "spiler 2 Text",
+      image: "/public",
     },
     {
       label: "Spoiler 3",
-      content:
-        "Another unique content for the third spoiler. Customize it based on your requirements.",
-      image: "/path/to/another-image.jpg",
+      content: "Spiler 3 Text",
+      image: "/public",
     },
   ],
 };
 ---
 
-<Layout title="Clickable Spoiler">
+<Layout title="MITGLIEDER">
   <TopBar />
   <div id="members_body">
     <h1><u>LEBENSLÄUFE AM LIMES</u></h1>
@@ -56,12 +54,12 @@ export const props = {
       {
         props.spoilers.map((spoiler, index) => (
           <div class="spoiler" key={index}>
+            <img src={spoiler.image} alt={`Spoiler ${index}`} />
             <input type="checkbox" id={`spoilerCheckbox${index}`} />
             <label for={`spoilerCheckbox${index}`} class="spoiler-label">
               {spoiler.label}
             </label>
             <div class="spoiler-content">
-              <img src={spoiler.image} alt={`Spoiler ${index}`} />
               <p>{spoiler.content}</p>
             </div>
           </div>
@@ -110,24 +108,38 @@ export const props = {
   }
 
   .spoiler {
-    margin: 20px;
+    position: relative;
+    margin: 20px 0;
+  }
+
+  .spoiler img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .spoiler-label {
     cursor: pointer;
     padding: 10px;
     border: 1px solid var(--color-light-2);
-    display: inline-block;
+    background-color: var(--color-tertiary);
+    border-radius: 20px;
+  }
+
+  .spoiler input {
+    display: none;
   }
 
   .spoiler-content {
     display: none;
     margin-top: 10px;
+    display: none;
   }
 
   .spoiler-content img {
     max-width: 100%;
     height: auto;
+    margin: 20px 0 0;
   }
 
   input:checked + .spoiler-label + .spoiler-content {
