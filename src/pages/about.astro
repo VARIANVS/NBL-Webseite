@@ -1,21 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import TopBar from "../components/top_bar.astro";
-import Gallery from "../components/Gallery.astro";
 
 const images = [
-  { src: "/public/besuch_1.jpg", alt: "Image 1" },
-  { src: "/public/besuch_2.jpg", alt: "Image 2" },
-  { src: "/public/besuch_3.jpg", alt: "Image 3" },
-  { src: "/public/besuch_4.jpg", alt: "Image 4" },
-  { src: "/public/aufbau_1.jpg", alt: "Image 5" },
+  { src: "/besuch_1.jpg", alt: "Image 1" },
+  { src: "/besuch_2.jpg", alt: "Image 2" },
+  { src: "/besuch_3.jpg", alt: "Image 3" },
+  { src: "/besuch_4.jpg", alt: "Image 4" },
+  { src: "/aufbau_1.jpg", alt: "Image 5" },
 ];
 ---
 
 <Layout title="Über uns">
   <TopBar />
-  <div class="group_image">
-    <img src="/public/aalen_2023_cut_upscaled.jpg" alt="Gruppenbild" />
+  <div class="head_image">
+    <img src="/aalen_2023_cut_upscaled.jpg" alt="Gruppenbild" />
     <div class="headline">
       <h1>
         <strong id="headline_1_upper">Über&nbsp;uns</strong>
@@ -82,75 +81,75 @@ const images = [
 
   <div class="gallery">
     <a href="#img1">
-      <img src="/public/aufbau_01.jpg" alt="Bild 1" />
+      <img src="/aufbau_01.jpg" alt="Bild 1" />
     </a>
     <a href="#img2">
-      <img src="/public/besuch_01.jpg" alt="Bild 2" />
+      <img src="/besuch_01.jpg" alt="Bild 2" />
     </a>
     <a href="#img3">
-      <img src="/public/besuch_02.jpg" alt="Bild 3" />
+      <img src="/besuch_02.jpg" alt="Bild 3" />
     </a>
     <a href="#img4">
-      <img src="/public/besuch_03.jpg" alt="Bild 4" />
+      <img src="/besuch_03.jpg" alt="Bild 4" />
     </a>
     <a href="#img5">
-      <img src="/public/besuch_04.jpg" alt="Bild 5" />
+      <img src="/besuch_04.jpg" alt="Bild 5" />
     </a>
     <a href="#img6">
-      <img src="/public/darstellung_01.jpg" alt="Bild 6" />
+      <img src="/darstellung_01.jpg" alt="Bild 6" />
     </a>
     <a href="#img7">
-      <img src="/public/darstellung_02.jpg" alt="Bild 7" />
+      <img src="/darstellung_02.jpg" alt="Bild 7" />
     </a>
     <a href="#img8">
-      <img src="/public/darstellung_03.jpg" alt="Bild 8" />
+      <img src="/darstellung_03.jpg" alt="Bild 8" />
     </a>
     <a href="#img9">
-      <img src="/public/darstellung_04.jpg" alt="Bild 9" />
+      <img src="/darstellung_04.jpg" alt="Bild 9" />
     </a>
     <a href="#img10">
-      <img src="/public/darstellung_05.jpg" alt="Bild 10" />
+      <img src="/darstellung_05.jpg" alt="Bild 10" />
     </a>
   </div>
 
   <div class="lightbox" id="img1">
-    <img id="img1" src="/public/aufbau_01.jpg" alt="Bild 1" />
+    <img id="img1" src="/aufbau_01.jpg" alt="Bild 1" />
     <a href="#_" class="close"></a>
   </div>
   <div class="lightbox" id="img2">
-    <img id="img2" src="/public/besuch_01.jpg" alt="Bild 2" />
+    <img id="img2" src="/besuch_01.jpg" alt="Bild 2" />
     <a href="#_" class="close"></a>
   </div>
   <div class="lightbox" id="img3">
-    <img id="img3" src="/public/besuch_02.jpg" alt="Bild 3" />
+    <img id="img3" src="/besuch_02.jpg" alt="Bild 3" />
     <a href="#_" class="close"></a>
   </div>
   <div class="lightbox" id="img4">
-    <img id="img4" src="/public/besuch_03.jpg" alt="Bild 4" />
+    <img id="img4" src="/besuch_03.jpg" alt="Bild 4" />
     <a href="#_" class="close"></a>
   </div>
   <div class="lightbox" id="img5">
-    <img id="img5" src="/public/besuch_04.jpg" alt="Bild 5" />
+    <img id="img5" src="/besuch_04.jpg" alt="Bild 5" />
     <a href="#_" class="close"></a>
   </div>
   <div class="lightbox" id="img6">
-    <img id="img6" src="/public/darstellung_01.jpg" alt="Bild 6" />
+    <img id="img6" src="/darstellung_01.jpg" alt="Bild 6" />
     <a href="#_" class="close"></a>
   </div>
   <div class="lightbox" id="img7">
-    <img id="img7" src="/public/darstellung_02.jpg" alt="Bild 7" />
+    <img id="img7" src="/darstellung_02.jpg" alt="Bild 7" />
     <a href="#_" class="close"></a>
   </div>
   <div class="lightbox" id="img8">
-    <img id="img8" src="/public/darstellung_03.jpg" alt="Bild 8" />
+    <img id="img8" src="/darstellung_03.jpg" alt="Bild 8" />
     <a href="#_" class="close"></a>
   </div>
   <div class="lightbox" id="img9">
-    <img id="img9" src="/public/darstellung_04.jpg" alt="Bild 9" />
+    <img id="img9" src="/darstellung_04.jpg" alt="Bild 9" />
     <a href="#_" class="close"></a>
   </div>
   <div class="lightbox" id="img10">
-    <img id="img10" src="/public/darstellung_05.jpg" alt="Bild 10" />
+    <img id="img10" src="/darstellung_05.jpg" alt="Bild 10" />
     <a href="#_" class="close"></a>
   </div>
 </Layout>
@@ -204,6 +203,18 @@ const images = [
     /* Target to display in flex when clicked on lightbox */
     :target {
       display: flex;
+    }
+
+    /* Hero Image */
+    .head_image {
+      max-width: 100vmax;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .head_image img {
+      max-width: 100%;
+      box-shadow: 0px 0px 6px 0px var(--box-shadow);
     }
 
     .headline {
@@ -272,7 +283,7 @@ const images = [
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 1rem;
       grid-auto-rows: 200px;
-      margin: 1rem;
+      margin: 3rem 1rem;
     }
   }
 
