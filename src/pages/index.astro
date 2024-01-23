@@ -1,0 +1,98 @@
+---
+import "../styles/index.css";
+import Layout from "../layouts/Layout.astro";
+import Grid from "../components/grid.astro";
+import TopBar from "../components/top_bar.astro";
+---
+
+<Layout title="NVMERVS BRITTONVM">
+  <main>
+    <TopBar />
+    <div class="group_image">
+      <img src="/nbl_gruppenbild_1_cut_upscaled.jpg" alt="Das Gruppenbild" />
+      <p><strong>Der Limes lebt – Werde ein Teil davon!</strong></p>
+    </div>
+    <div class="headline">
+      <h1>
+        <strong id="headline_1_upper">
+          Im Welzheimer Ostkastell daheim...</strong
+        >
+        <br />
+        <br />
+        <strong id="headline_1_lower">...am ganzen Limes entlang zuhause</strong
+        >
+      </h1>
+    </div>
+    <div>
+      <img
+        id="logo_page"
+        src="/nbl_logo.png"
+        alt="Das offizielle Numerus Brittonum Logo"
+      />
+    </div>
+    <div class="container_1">
+      <p class="container_1_p">
+        Willkommen bei der Römergruppe Numerus Brittonum! Tauchen Sie ein in die
+        faszinierende Welt des antiken Roms! Die Mitglieder des Numerus
+        Brittonum, eine vielfältige Gemeinschaft mit einer tiefen Leidenschaft
+        für Geschichte, heißen Sie herzlich willkommen. Seit 2005 setzen wir uns
+        dafür ein, den "obergermanisch-raetischen Limes" als lebendigen
+        Geschichtsort zu vermitteln und die faszinierende Römerzeit zeitgemäß zu
+        präsentieren.
+        <br />
+        <br />
+        Als Abbild einer Grenztruppe samt ihres zivilen Umfeld eines Kastellstandortes
+        macht der Numerus Brittonum das Lebens am Rande des Imperiums wieder lebendig.
+        Damit hat 1800 Jahre nach Aufgabe der Welzheimer Ostkastells die Anlage und
+        der gesamte Limes eine neue Besatzung gefunden. Mit seiner ehrenamtlichen
+        und gemeinnützigen Tätigkeiten als eine Abteilung des Historischen Vereins
+        Welzheim findet man die Gruppe bei Römerfesten, auf eigenen Veranstaltungen
+        und bei der Realisierung ihrer eigenen Projekten. Dabei ist die Truppe, die
+        Einzige, die sich dem Einheitentypus einer Numeri-Einheit widmet. Nebenbei
+        sind wir in der Berufung auf die ehemalige Garnison des Ortes der “älteste”
+        Verein des Landes Baden-Württemberg! Interesse geweckt? Dann viel Vergnügen
+        bei der Lektüre unseres digitalen Auftritts, der hoffentlich dazu anregt,
+        uns auch mal live im römischen Marschlager, bei einer unserer zahlreichen
+        Veranstaltungen, zu erleben.
+      </p>
+    </div>
+    <div class="headline_2">
+      <h2>
+        <strong id="headline_2_upper">Der Limes lebt</strong>
+        <br />
+        <br />
+        <strong id="headline_2_lower">Werde ein Teil davon</strong>
+      </h2>
+    </div>
+    <Grid />
+    <!-- <div class="section_4">
+      <img src="/genau_du_2.jpg" alt="Bild" />
+      <div class="content">
+        <h4>Für jeden Spaß zu haben</h4>
+        <p>
+          Wir sind flexibel und passen in jede Situation.
+          <br />Ernst oder lustig
+          <br />Stark oder einfühlsam
+          <br />Fleißig oder bequem
+        </p>
+      </div>
+    </div> -->
+  </main>
+
+  <style>
+    @media (min-width: 250px) {
+      /* CONTAINRER HIER LASSEN! SONST FUNKTIONIERT GRID NICHT MEHR RICHTIG, wieso auch immer. */
+      .container {
+        display: flex;
+        margin: auto;
+        padding: 1rem;
+        width: 800px;
+        max-width: calc(100% - 2rem);
+        color: var(--text-color-standard);
+        font-size: var(--text-font-size);
+        line-height: 1.6;
+        z-index: 0;
+      }
+    }
+  </style>
+</Layout>

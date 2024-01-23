@@ -1,0 +1,99 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TopBar from "../components/top_bar.astro";
+---
+
+<Layout title="Kontakt">
+  <TopBar />
+  <div id="contact_body">
+    <h1><u>Kontaktiere uns</u></h1>
+    <form action="/submit" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">E-Mail:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="email">Betreff:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Nachricht:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Absenden</button>
+    </form>
+  </div>
+</Layout>
+
+<style>
+  @media (min-width: 250px) {
+    #contact_body {
+      z-index: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      max-width: 45rem;
+      margin: 8rem auto;
+      box-shadow: 0px 0px 6px 0px var(--box-shadow);
+      padding: 2rem 0 4rem;
+      text-underline-offset: 0.5rem;
+    }
+
+    h1 {
+      font-size: calc(var(--text-font-size-mobile) + 0.5rem);
+      margin: auto;
+      padding: 2rem 0;
+      text-shadow: 2px 4px 2px var(--text-shadow);
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 3rem;
+      background-color: var(--color-primary);
+      border: 1px solid var(--color-light-2);
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: var(--color-tertiary);
+      color: var(--text-color-standard);
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    p {
+      font-size: var(--text-font-size-mobile);
+      padding: 1rem 1rem 1rem;
+      background-color: var(--color-primary);
+      box-shadow: 0px 0px 6px 0px var(--box-shadow);
+    }
+  }
+
+  @media (min-width: 768px) {
+    body {
+      font-size: var(--text-font-size);
+    }
+  }
+</style>
