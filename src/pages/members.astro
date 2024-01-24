@@ -26,6 +26,46 @@ export const props = {
       content: "Spoiler 4 Text",
       image: "/platt_02.jpg",
     },
+    {
+      label: "PRIMVS",
+      content: "Spoiler 3 Text",
+      image: "/mithras_01.jpg",
+    },
+    {
+      label: "MARCELLVS",
+      content: "Spoiler 4 Text",
+      image: "/platt_02.jpg",
+    },
+    {
+      label: "PRIMVS",
+      content: "Spoiler 3 Text",
+      image: "/mithras_01.jpg",
+    },
+    {
+      label: "MARCELLVS",
+      content: "Spoiler 4 Text",
+      image: "/platt_02.jpg",
+    },
+    {
+      label: "PRIMVS",
+      content: "Spoiler 3 Text",
+      image: "/mithras_01.jpg",
+    },
+    {
+      label: "MARCELLVS",
+      content: "Spoiler 4 Text",
+      image: "/platt_02.jpg",
+    },
+    {
+      label: "PRIMVS",
+      content: "Spoiler 3 Text",
+      image: "/mithras_01.jpg",
+    },
+    {
+      label: "MARCELLVS",
+      content: "Spoiler 4 Text",
+      image: "/platt_02.jpg",
+    },
   ],
 };
 ---
@@ -61,15 +101,15 @@ export const props = {
       </p>
     </div>
     <br />
-    <div class="spoilers-grid">
+    <div class="spoilers_grid">
       {
         props.spoilers.map((spoiler, index) => (
           <div class="spoiler" key={index}>
             <input type="checkbox" id={`spoilerCheckbox${index}`} />
-            <label for={`spoilerCheckbox${index}`} class="spoiler-label">
+            <label for={`spoilerCheckbox${index}`} class="spoiler_label">
               {spoiler.label}
             </label>
-            <div class="spoiler-content">
+            <div class="spoiler_content">
               <p id="spoiler_p">{spoiler.content}</p>
             </div>
             <img src={spoiler.image} alt={`Spoiler ${index}`} />
@@ -130,7 +170,7 @@ export const props = {
       max-width: 45rem;
     }
 
-    .spoilers-grid {
+    .spoilers_grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 1rem;
@@ -138,6 +178,7 @@ export const props = {
 
     .spoiler {
       position: relative;
+      transition: transform 0.3s;
     }
 
     .spoiler img {
@@ -151,7 +192,7 @@ export const props = {
       background-color: var(--box-background);
     }
 
-    .spoiler-label {
+    .spoiler_label {
       cursor: pointer;
       padding: 1.5rem;
       background-image: url("/ansata_02.png");
@@ -163,19 +204,30 @@ export const props = {
       justify-content: center;
       width: 75%;
       max-height: 1rem;
+      opacity: 1;
+      transition: 0.3s;
+    }
+
+    .spoiler_label:hover {
+      animation: hover_up 0.3s forwards;
+      opacity: 0.8;
+    }
+
+    .spoiler_label:not(:hover) {
+      animation: hover_down 0.3s forwards;
     }
 
     .spoiler input {
       display: none;
     }
 
-    .spoiler-content {
+    .spoiler_content {
       display: none;
       position: absolute;
       margin-top: 1rem;
     }
 
-    input:checked + .spoiler-label + .spoiler-content {
+    input:checked + .spoiler_label + .spoiler_content {
       display: block;
     }
   }
