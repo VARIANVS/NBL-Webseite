@@ -5,6 +5,7 @@ import TopBar from "../components/top_bar.astro";
 
 <Layout title="Karriere">
   <TopBar />
+  <div id="career_body"></div>
   <div class="group_image">
     <img src="/genau_du_cut_upscaled.jpg" alt="Genau dich suchen wir!" />
     <div class="headline">
@@ -17,7 +18,7 @@ import TopBar from "../components/top_bar.astro";
     </div>
   </div>
   <h2>Junge aufstrebende und innovative Römergruppe sucht Verstärkung</h2>
-  <div class="section_1">
+  <div class="container_1">
     <br />
     <ul>
       <strong>Wir bieten dir:</strong>
@@ -39,29 +40,39 @@ import TopBar from "../components/top_bar.astro";
     </ul>
   </div>
   <h3>Römer auf Probe</h3>
-  <p class="section_2_p">
-    Römertage exklusiv und live mit- erleben Geboten werden: Aktive Teilnahme
-    und Unterbringung bei den IV. Welzheimer Römertagen 2014: Mittendrin im
-    Römerlager, Schlafen im Militärzelt, römisches Essen mit den Kameraden
-    teilen, Drill und Alltag in einem Kastell erspüren, den Ernstfall proben…
-    Alles was zum Römersein gehört: Intensives Ausprobieren, Mitmachen,
-    Einblicke hinter die Kulisse, interessante Gespräche und Begegnungen am
-    Lagerfeuer Fachliche Betreuung während und vor den Römertagen Mappe mit
-    Ausbildung- und Infomaterial und einer Bilddokumentation Professionelle und
-    historisch authentische Einführung in das Leben in einem römischen Kastell
-    (Ausbildung….) Teilnahme an einem speziellen Vorbereitungsprogramm
-    (Trainingseinheiten…) Authentische antike Verpflegung und Freizeitprogramm
-    Anprobieren und Testen römischer Soldatenausrüstung Stellung einer römischen
-    Grundausrüstung über die Ausbildungszeit Für interessierte Frauen kann ein
-    entsprechendes ziviles Angebot (Handwerk, Kochen… angeboten werden Dieses
-    Angebot ist unverbindlich und verlangt keine weitere Verpflichtung und ist
-    als exklusives Schnupperangebot gedacht Ehepartner oder Familienangehörige
-    können ggf. auch während den Römertagen einbezogen werden
-  </p>
+  <div class="container_1">
+    <p>
+      Römertage exklusiv und live mit- erleben Geboten werden: Aktive Teilnahme
+      und Unterbringung bei den IV. Welzheimer Römertagen 2014: Mittendrin im
+      Römerlager, Schlafen im Militärzelt, römisches Essen mit den Kameraden
+      teilen, Drill und Alltag in einem Kastell erspüren, den Ernstfall proben…
+      Alles was zum Römersein gehört: Intensives Ausprobieren, Mitmachen,
+      Einblicke hinter die Kulisse, interessante Gespräche und Begegnungen am
+      Lagerfeuer Fachliche Betreuung während und vor den Römertagen Mappe mit
+      Ausbildung- und Infomaterial und einer Bilddokumentation Professionelle
+      und historisch authentische Einführung in das Leben in einem römischen
+      Kastell (Ausbildung….) Teilnahme an einem speziellen Vorbereitungsprogramm
+      (Trainingseinheiten…) Authentische antike Verpflegung und Freizeitprogramm
+      Anprobieren und Testen römischer Soldatenausrüstung Stellung einer
+      römischen Grundausrüstung über die Ausbildungszeit Für interessierte
+      Frauen kann ein entsprechendes ziviles Angebot (Handwerk, Kochen…
+      angeboten werden Dieses Angebot ist unverbindlich und verlangt keine
+      weitere Verpflichtung und ist als exklusives Schnupperangebot gedacht
+      Ehepartner oder Familienangehörige können ggf. auch während den Römertagen
+      einbezogen werden
+    </p>
+  </div>
 </Layout>
 
 <style>
   @media (min-width: 250px) {
+    #career_body {
+      z-index: 1;
+      text-align: center;
+      text-underline-offset: 0.5rem;
+      font-size: var(--text-font-size-mobile);
+    }
+
     .group_image {
       position: relative;
       max-width: 100%;
@@ -104,25 +115,38 @@ import TopBar from "../components/top_bar.astro";
       text-shadow: 2px 4px 2px var(--text-shadow);
     }
 
-    .section_1 {
-      z-index: 1;
+    p {
+      font-size: var(--text-font-size-mobile);
+      background-color: var(--color-dark);
+      padding: 1rem 1rem 1rem;
+      max-width: 100%;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      max-width: 45rem;
+      position: relative;
       margin: auto;
-      padding: 2rem 1rem 2rem;
-      background-color: var(--color-primary);
+    }
+
+    .container_1 {
+      text-align: center;
+      position: relative;
+      background-color: var(--color-dark);
+      color: var(--text-color-standard);
+      max-width: 100%;
       box-shadow: 0px 0px 6px 0px var(--box-shadow);
     }
 
-    .section_1 ul {
+    .container_1 p {
+      padding: 2rem 1rem 2rem;
+      max-width: 45rem;
+    }
+
+    .container_1 ul {
+      font-size: var(--text-font-size-mobile);
       list-style-type: square;
       list-style-position: inside;
       text-align: start;
       max-width: 500px;
       margin: auto;
-      padding: 0rem 0rem 0rem;
+      padding: 1rem 1rem 2rem;
     }
 
     h3 {
@@ -131,15 +155,6 @@ import TopBar from "../components/top_bar.astro";
       font-size: calc(var(--text-font-size-mobile) + 0.25svh);
       padding: 2rem 0;
       text-shadow: 2px 4px 2px var(--text-shadow);
-    }
-
-    .section_2_p {
-      text-align: center;
-      margin: auto;
-      max-width: 45rem;
-      padding: 1rem 1rem 2rem;
-      background-color: var(--color-primary);
-      box-shadow: 0px 0px 6px 0px var(--box-shadow);
     }
   }
 
@@ -157,6 +172,14 @@ import TopBar from "../components/top_bar.astro";
       background-color: var(--box-background);
       box-shadow: 0 4px 6px var(--box-shadow);
       text-shadow: 2px 4px 2px var(--text-shadow);
+    }
+
+    p {
+      font-size: var(--text-font-size);
+    }
+
+    .container_1 ul {
+      font-size: var(--text-font-size);
     }
   }
 </style>

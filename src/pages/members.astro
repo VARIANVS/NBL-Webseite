@@ -5,7 +5,7 @@ import TopBar from "../components/top_bar.astro";
 export const props = {
   spoilers: [
     {
-      label: "MICCVS",
+      label: "MICCVS suplicus marvinus robinus severus",
       content:
         "MICCVS stieß mehr oder weniger zufällig auf uns und wir auf ihn. Innerhalb kürzester Zeit legte er sich eine Ausrüstung zu und verstärkt die lokale Garnison.",
       image: "/darstellung_09.jpg",
@@ -34,28 +34,33 @@ export const props = {
   <TopBar />
   <div id="members_body">
     <h1><u>LEBENSLÄUFE AM LIMES</u></h1>
-    <p>
-      Leben am Limes ist die personifizierte, exemplarische Darstellung
-      vergangener Lebensformen und Lebenswelten einer Grenzgesellschaft des 3.
-      Jhd in den germanischen Provinzen. Diese biographische Annäherung erfolgt,
-      um in der Vermittlung einen lebensweltlichen Bezug zu den nachgewiesenen
-      Personen und Rollen in der antiken Grenzgesellschaft zu erreichen. Diese
-      können in einer Entsprechung oder Kontrastierung eine emotionale
-      Verbindung zur modernen Erfahrungswelt der Menschen schaffen (Arbeit,
-      Familie, Kindheit, Alter). Dies ist der Schlüssel, um das Limesleben für
-      heute nahe zu bringen.
-    </p>
+    <div class="container_1">
+      <p>
+        Leben am Limes ist die personifizierte, exemplarische Darstellung
+        vergangener Lebensformen und Lebenswelten einer Grenzgesellschaft des 3.
+        Jhd in den germanischen Provinzen. Diese biographische Annäherung
+        erfolgt, um in der Vermittlung einen lebensweltlichen Bezug zu den
+        nachgewiesenen Personen und Rollen in der antiken Grenzgesellschaft zu
+        erreichen. Diese können in einer Entsprechung oder Kontrastierung eine
+        emotionale Verbindung zur modernen Erfahrungswelt der Menschen schaffen
+        (Arbeit, Familie, Kindheit, Alter). Dies ist der Schlüssel, um das
+        Limesleben für heute nahe zu bringen.
+      </p>
+    </div>
+    <h2>Wir stellen uns vor</h2>
+    <div class="container_1">
+      <p>
+        Die einzelnen Biografien sind sorgfältig entworfen und sollen in der
+        Zusammenschau einen repräsentativen Querschnitt der Limesbewohner
+        abbilden. Entweder sind die jeweiligen Namen nachgewiesen oder die
+        einzelne Rolle, Funktion des Mitglieds. Da wir in unserer Vermittlung
+        nie die Gegenwart aus den Augen nehmen, wollen wir uns auch als die
+        Menschen vorstellen, die sich der Antike im 21. Jahrhundert widmen.
+        Diese Leidenschaft verbindet uns miteinander und vielleicht auch mit
+        Ihnen? Nun wünschen wir eine interessante Lektüre!
+      </p>
+    </div>
     <br />
-    <p>
-      Die einzelnen Biografien sind sorgfältig entworfen und sollen in der
-      Zusammenschau einen repräsentativen Querschnitt der Limesbewohner
-      abbilden. Entweder sind die jeweiligen Namen nachgewiesen oder die
-      einzelne Rolle, Funktion des Mitglieds. Da wir in unserer Vermittlung nie
-      die Gegenwart aus den Augen nehmen, wollen wir uns auch als die Menschen
-      vorstellen, die sich der Antike im 21. Jahrhundert widmen. Diese
-      Leidenschaft verbindet uns miteinander und vielleicht auch mit Ihnen? Nun
-      wünschen wir eine interessante Lektüre!
-    </p>
     <div class="spoilers-grid">
       {
         props.spoilers.map((spoiler, index) => (
@@ -76,84 +81,108 @@ export const props = {
 </Layout>
 
 <style>
-  #members_body {
-    z-index: 1;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    max-width: 45rem;
-    margin: 8rem auto;
-    box-shadow: 0px 0px 6px 0px var(--box-shadow);
-    padding: 2rem 0 4rem;
-    text-underline-offset: 0.5rem;
+  @media (min-width: 250px) {
+    #members_body {
+      z-index: 1;
+      margin: 8rem auto 0;
+      text-align: center;
+      text-underline-offset: 0.5rem;
+    }
+
+    h1,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: calc(var(--text-font-size-mobile) + 0.5rem);
+      margin: auto;
+      padding: 2rem 0;
+      text-shadow: 2px 4px 2px var(--text-shadow);
+    }
+
+    h2 {
+      text-align: center;
+      margin: auto;
+      font-size: calc(var(--text-font-size-mobile) + 0.5rem);
+      padding: 1rem 0 1rem 0;
+      text-shadow: 2px 4px 2px var(--text-shadow);
+    }
+
+    p {
+      font-size: var(--text-font-size-mobile);
+      background-color: var(--color-dark);
+      padding: 1rem 1rem 1rem;
+      max-width: 100%;
+      position: relative;
+      margin: auto;
+    }
+
+    .container_1 {
+      position: relative;
+      background-color: var(--color-dark);
+      color: var(--text-color-standard);
+      max-width: 100%;
+      box-shadow: 0px 0px 6px 0px var(--box-shadow);
+    }
+
+    .container_1 p {
+      padding: 2rem 1rem 2rem;
+      max-width: 45rem;
+    }
+
+    .spoilers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .spoiler {
+      position: relative;
+    }
+
+    .spoiler img {
+      width: auto;
+      max-height: auto;
+      display: block;
+      margin-top: 1rem;
+    }
+
+    #spoiler_p {
+      background-color: var(--box-background);
+    }
+
+    .spoiler-label {
+      cursor: pointer;
+      padding: 1.5rem;
+      background-image: url("/ansata_02.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 75%;
+      max-height: 1rem;
+    }
+
+    .spoiler input {
+      display: none;
+    }
+
+    .spoiler-content {
+      display: none;
+      position: absolute;
+      margin-top: 1rem;
+    }
+
+    input:checked + .spoiler-label + .spoiler-content {
+      display: block;
+    }
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: calc(var(--text-font-size-mobile) + 0.5rem);
-    margin: auto;
-    padding: 2rem 0;
-    text-shadow: 2px 4px 2px var(--text-shadow);
-  }
-
-  p {
-    font-size: var(--text-font-size-mobile);
-    padding: 1rem 1rem 1rem;
-    background-color: var(--color-primary);
-    box-shadow: 0px 0px 6px 0px var(--box-shadow);
-  }
-
-  .spoilers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-  }
-
-  .spoiler {
-    position: relative;
-    margin: 20px 0;
-  }
-
-  .spoiler img {
-    width: 100%;
-    max-height: auto;
-    display: block;
-    margin-top: 2rem;
-  }
-
-  #spoiler_p {
-    background-color: var(--box-background);
-  }
-
-  .spoiler-label {
-    cursor: pointer;
-    padding: 10px;
-    border: 1px solid var(--color-light-2);
-    background-color: var(--color-tertiary);
-    border-radius: 20px;
-  }
-
-  .spoiler input {
-    display: none;
-  }
-
-  .spoiler-content {
-    display: none;
-    position: absolute;
-    margin-top: 10px;
-    padding: 10px;
-  }
-
-  .spoiler-content img {
-    max-width: 100%;
-    margin: 20px 0 0;
-  }
-
-  input:checked + .spoiler-label + .spoiler-content {
-    display: block;
+  @media (min-width: 769px) {
+    p {
+      font-size: var(--text-font-size);
+    }
   }
 </style>

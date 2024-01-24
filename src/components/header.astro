@@ -19,18 +19,34 @@ import "../styles/global.css";
       />
     </a>
     <ul id="menu">
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="career.html">KARRIERE</a></li>
-      <li><a href="offers.html">ANGEBOT</a></li>
-      <li><a href="events.html">EVENTS</a></li>
-      <li><a href="about.html">ÜBER&nbsp;UNS</a></li>
-      <li><a href="members.html">MITGLIEDER</a></li>
-      <li><a href="contact.html">KONTAKT</a></li>
+      <li><a href="/index.html">HOME</a></li>
+      <li><a href="/career.html">KARRIERE</a></li>
+      <li><a href="/offers.html">ANGEBOT</a></li>
+      <li><a href="/events.html">EVENTS</a></li>
+      <li><a href="/about.html">ÜBER&nbsp;UNS</a></li>
+      <li><a href="/members.html">MITGLIEDER</a></li>
+      <li><a href="/contact.html">KONTAKT</a></li>
     </ul>
   </div>
 </nav>
 
 <style>
+  @media (min-width: 1400px) {
+    #menu {
+      align-items: flex-start;
+      width: 10rem;
+      max-height: 100px;
+      padding-right: 150px;
+      gap: 1rem;
+    }
+
+    /* Menu links styling 1440px*/
+    #menu a {
+      width: 20rem;
+      height: 110px;
+    }
+  }
+
   @media (min-width: 250px) {
     header {
       z-index: 99;
@@ -133,34 +149,32 @@ import "../styles/global.css";
 
     /* Menu items format when Hamburger menu is toggled */
     #menu {
+      pointer-events: none; /* To make the image gallery clickable as long as menu is not toggled */
+      list-style-type: none;
       background: var(--color-primary);
       text-shadow: 2px 4px 2px var(--text-shadow);
       display: flex;
       flex-direction: column;
-      flex-wrap: wrap;
       align-items: center;
-      text-align: left;
       position: fixed;
       width: 100%;
       margin: 0;
       padding: 5rem 0;
-      list-style-type: none;
       right: 0;
-      padding-right: 0px;
-      gap: 0.5rem;
-      -webkit-transition: top 0.8s ease;
-      -o-transition: top 0.8s ease;
-      transition: top 0.8s ease;
-      pointer-events: none; /* To make the image gallery clickable as long as menu is not toggled */
+      gap: 1rem;
       top: 100%;
       opacity: 0;
-      overflow-y: auto;
+      transition: 0.8s ease;
+      max-height: 80%;
+      overflow-y: scroll;
+      overflow-x: hidden;
     }
 
+    /* Menu links styling 768px*/
     #menu a {
       color: var(--color-background-primary);
-      width: 160px;
-      height: 83px;
+      width: 10.5rem;
+      height: 84px;
       background-image: url("/pillar_2_horizontal.png");
       background-size: cover;
       display: inline-flex;
@@ -188,7 +202,7 @@ import "../styles/global.css";
       background-color: var(--text-color-dark);
       text-shadow: 2px 4px 2px var(--text-shadow);
       display: block;
-      width: 50rem;
+      width: 60rem;
       height: 2px;
       position: absolute;
       bottom: 0;
@@ -229,25 +243,30 @@ import "../styles/global.css";
     #menu {
       align-items: flex-start;
       width: 6.5svw;
-      padding: 5rem 2.75rem 0 2.75rem;
-      padding-right: 100px;
+      padding: 5rem 0rem 0 2.75rem;
+      padding-right: 7rem;
       padding-bottom: 100vmax;
-      gap: 0.5rem;
+      gap: 1rem;
       opacity: 0;
       transition: 0.8s ease;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+
+    /* Menu links styling 768px*/
+    #menu a {
+      width: 18rem;
+      height: 100px;
+      background-image: url("/pillar_2_horizontal_long.png");
+      background-size: cover;
+      display: inline-flex;
+      padding-left: 2.5rem;
+      justify-content: left;
     }
 
     #menuToggle input:checked ~ #menu {
       opacity: 1;
       animation: SlideIn 1s;
-    }
-
-    #menu::after {
-      width: 49px;
-      height: 100%;
-      position: fixed;
-      top: 0;
-      right: 0;
     }
 
     /* Menu list items format */
@@ -258,7 +277,7 @@ import "../styles/global.css";
     #menu li::before,
     #menu li::after {
       width: 500px;
-      height: 2px;
+      height: 3px;
       transform: translateX(-10%);
     }
 
