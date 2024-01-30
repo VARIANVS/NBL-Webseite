@@ -1,5 +1,10 @@
   @media (min-width: 250px) {
 
+
+      #top_box {
+          display: none;
+      }
+
       #logo_page {
           position: relative;
           display: block;
@@ -117,7 +122,21 @@
       }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
+
+      #top_box {
+          display: block;
+          font-size: calc(var(--text-font-size) + 1svw);
+          z-index: 0;
+          position: absolute;
+          left: 0;
+          top: 10svw;
+          padding: 2rem 2rem;
+          background-color: var(--box-background);
+          box-shadow: 0 4px 6px var(--box-shadow);
+          text-shadow: 2px 4px 2px var(--text-shadow);
+          overflow: hidden;
+      }
 
       #logo_page {
           padding: 1rem 0 4rem 0;

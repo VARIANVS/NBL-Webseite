@@ -102,9 +102,14 @@
 
 html {
     font-family: sans-serif;
+
     background: var(--color-background-primary);
     color: var(--text-color-standard);
     scroll-behavior: smooth;
+}
+
+body {
+    font-size: 16px;
 }
 
 .hidden {
