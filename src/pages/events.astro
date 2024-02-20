@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import TopBar from "../components/top_bar.astro";
 let currentTime = new Date();
 let year = currentTime.getFullYear();
 
@@ -72,7 +71,6 @@ const {
 ---
 
 <Layout title="Events">
-  <TopBar />
   <div id="events_body">
     <h1><u>Events {year}</u></h1>
     <strong id="top_text">Hier trefft ihr uns dieses Jahr an</strong>
